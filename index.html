@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your website description">
+    <meta name="author" content="Your Name">
+    <title>Your Website Title</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-gamepad me-2"></i>Playnetiq
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./games.html">
+                            <i class="fas fa-gamepad me-1"></i>Games
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <i class="fas fa-envelope me-1"></i>Contact Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cancel">
+                            <i class="fas fa-credit-card me-1"></i>Cancel Subscription
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex">
+                    <button class="btn btn-outline-light me-2" type="button">
+                        <i class="fas fa-user-plus me-1"></i>Sign Up
+                    </button>
+                    <button class="btn btn-light" type="button">
+                        <i class="fas fa-sign-in-alt me-1"></i>Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section py-5 position-relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+            <div class="hero-blob hero-blob-1"></div>
+            <div class="hero-blob hero-blob-2"></div>
+        </div>
+        
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center min-vh-75">
+                <div class="col-lg-6 mb-5">
+                    <h1 class="display-4 fw-bold mb-4">Welcome to Your Gaming World</h1>
+                    <p class="lead mb-4">Experience the ultimate gaming platform with cutting-edge technology and immersive gameplay. Join thousands of players worldwide.</p>
+                    <button class="btn btn-light btn-lg me-3" id="ctaButton">
+                        <i class="fas fa-play me-2"></i>Start Playing
+                    </button>
+                    <button class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-info-circle me-2"></i>Learn More
+                    </button>
+                </div>
+                
+            </div>
+            
+            <!-- Benefits Cards -->
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="hero-benefit-card text-center">
+                        <div class="benefit-icon mb-3">
+                            <span class="benefit-number">500+</span>
+                        </div>
+                        <h5 class="fw-bold mb-2">Games Available</h5>
+                        <p class="mb-0">Choose from our vast collection of premium games across all genres and platforms.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="hero-benefit-card text-center">
+                        <div class="benefit-icon mb-3">
+                            <span class="benefit-number">∞</span>
+                        </div>
+                        <h5 class="fw-bold mb-2">Hours of Fun</h5>
+                        <p class="mb-0">Unlimited entertainment with endless gameplay possibilities and regular content updates.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="hero-benefit-card text-center">
+                        <div class="benefit-icon mb-3">
+                            <span class="benefit-number">0</span>
+                        </div>
+                        <h5 class="fw-bold mb-2">Downloads Required</h5>
+                        <p class="mb-0">Play instantly in your browser with no downloads, installations, or storage concerns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Games Section -->
+    <section id="games" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Featured Games</h2>
+                    <p class="lead text-muted">Discover our most popular and highest-rated games</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="game-card trend-grid position-relative">
+                        <div class="game-image">
+                            <img src="https://cdn.marketjs.net/games/blackjack-vegas-21/localization/en/media/graphics/promo/banners/440x280.jpg" alt="Cyber Quest" class="img-fluid">
+                            <div class="play-button">
+                                <a class="btn btn-primary btn-sm" href="/game_play.html?gameUrl=https%3A%2F%2Fapi.gameronxy.com%2Fserve%3Fportal_id%3D5670905930842112%26game_id%3D6692078093336576%26branding_id%3D5485121852407808%26ad_id%3D5992527409709056%26portal_localization_id%3D6220873473196032">
+                                    <i class="fas fa-play me-1"></i>Play
+                                </a>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h4 class="game-title mb-2">Blackjack Vegas 21</h4>
+                            <div class="game-rating mb-2">
+                                <div class="stars">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <span class="rating-number ms-2">4.9</span>
+                            </div>
+                            <p class="game-description">A classic black jack game. Play against the house. Stack your chips up high. Double, hit or stand. What do you do? Features: - Realistic graphics and theme - Ran out of chips? Wait to receive more - Simple and straight to the point gameplay.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="game-card trend-grid position-relative">
+                        <div class="game-image">
+                            <img src="https://cdn.marketjs.net/games/rally-champion/localization/en/media/graphics/promo/banners/440x280.jpg" alt="Space Warriors" class="img-fluid">
+                            <div class="play-button">
+                                <a class="btn btn-primary btn-sm" href="/game_play.html?gameUrl=https%3A%2F%2Fapi.gameronxy.com%2Fserve%3Fportal_id%3D5670905930842112%26game_id%3D5845878899212288%26branding_id%3D5485121852407808%26ad_id%3D5992527409709056%26portal_localization_id%3D6220873473196032">
+                                    <i class="fas fa-play me-1"></i>Play
+                                </a>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h4 class="game-title mb-2">Rally Champion</h4>
+                            <div class="game-rating mb-2">
+                                <div class="stars">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                </div>
+                                <span class="rating-number ms-2">4.7</span>
+                            </div>
+                            <p class="game-description">READY, SET, GO! A new and exciting rally race game with realistic graphics. Compete in a series of race tracks to be number 1. Turn left and right while overtaking other racers. Ride on speed lanes to get an edge over your opponent.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="game-card trend-grid position-relative">
+                        <div class="game-image">
+                            <img src="https://cdn.marketjs.net/games/wordmeister/localization/en/media/graphics/promo/banners/440x280.jpg" alt="Dragon Realm" class="img-fluid">
+                            <div class="play-button">
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-play me-1"></i>Play
+                                </button>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h4 class="game-title mb-2">Wordmeister</h4>
+                            <div class="game-rating mb-2">
+                                <div class="stars">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <span class="rating-number ms-2">4.8</span>
+                            </div>
+                            <p class="game-description">Form English words to score points by dragging tiles. Use bonus tiles like double letters or triple words. Test your vocabulary—highest score wins! Perfect for word game fans. Includes a quick tutorial, smart AI, shuffle and swap options, avatar choices, and a large word list following global standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Genres Section -->
+    <section id="genres" class="py-5 grey-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Game Genres</h2>
+                    <p class="lead text-muted">Explore games by your favorite categories</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Family" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h5 class="genre-title">Family</h5>
+                            <p class="genre-description">Fun games suitable for all ages to play together</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Puzzle" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <h5 class="genre-title">Puzzle</h5>
+                            <p class="genre-description">Brain teasers and logic games to challenge your mind</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Endless" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-infinity"></i>
+                            </div>
+                            <h5 class="genre-title">Endless</h5>
+                            <p class="genre-description">Games that keep going with increasing difficulty</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Action" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-fist-raised"></i>
+                            </div>
+                            <h5 class="genre-title">Action</h5>
+                            <p class="genre-description">Fast-paced games requiring quick reflexes</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Kids" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <h5 class="genre-title">Kids</h5>
+                            <p class="genre-description">Safe, educational games designed for children</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Sports" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-football-ball"></i>
+                            </div>
+                            <h5 class="genre-title">Sports</h5>
+                            <p class="genre-description">Virtual sports and athletic competitions</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Big kids" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <h5 class="genre-title">Teenage Games</h5>
+                            <p class="genre-description">Challenging games for older kids and teens</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Strategy" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-chess"></i>
+                            </div>
+                            <h5 class="genre-title">Strategy</h5>
+                            <p class="genre-description">Think ahead and plan your moves to win</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Educational" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h5 class="genre-title">Educational</h5>
+                            <p class="genre-description">Learn while having fun with these games</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Adventure" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-map"></i>
+                            </div>
+                            <h5 class="genre-title">Adventure</h5>
+                            <p class="genre-description">Explore new worlds and epic quests</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Young Kids" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <h5 class="genre-title">Young Kids</h5>
+                            <p class="genre-description">Simple games for very young children</p>
+                        </div>
+                    </a>
+                </div> -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Platformer" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <h5 class="genre-title">Platformer</h5>
+                            <p class="genre-description">Jump and run through challenging levels</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Match 3" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <h5 class="genre-title">Match 3</h5>
+                            <p class="genre-description">Match three or more items to clear them</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Board" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-dice"></i>
+                            </div>
+                            <h5 class="genre-title">Board</h5>
+                            <p class="genre-description">Digital versions of classic board games</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Multiplayer" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h5 class="genre-title">Multiplayer</h5>
+                            <p class="genre-description">Play with friends and other players online</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Memory" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h5 class="genre-title">Memory</h5>
+                            <p class="genre-description">Test and improve your memory skills</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="/?page=games&cat=Word" class="genre-link">
+                        <div class="genre-card">
+                            <div class="genre-icon">
+                                <i class="fas fa-font"></i>
+                            </div>
+                            <h5 class="genre-title">Word</h5>
+                            <p class="genre-description">Word puzzles and vocabulary games</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about-section py-5">
+        <!-- Decorative Elements -->
+        <div class="about-decorative-elements">
+            <div class="about-blob about-blob-1"></div>
+            <div class="about-blob about-blob-2"></div>
+            <div class="about-blob about-blob-3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">About PlaynetiQ</h2>
+                    <p class="lead">Your ultimate destination for online gaming without downloads</p>
+                </div>
+            </div>
+            
+            <!-- Two Column Layout -->
+            <div class="row mb-5">
+                <!-- Left Column - Text Content -->
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="about-content-container">
+                        <h3 class="mb-4">Play Hundreds of Games Online - No Downloads Required</h3>
+                        <p class="mb-4">
+                            Welcome to PlaynetiQ, where gaming meets convenience! Our platform provides access to hundreds of carefully curated online games that you can play instantly in your browser. No downloads, no installations, no storage concerns - just pure gaming fun at your fingertips.
+                        </p>
+                        <p class="mb-4">
+                            We specialize in lightweight, browser-based games that don't strain your device's resources. From puzzle games to action adventures, family-friendly content to strategic challenges, our collection spans over 20 different genres to satisfy every type of gamer.
+                        </p>
+                        <p class="mb-0">
+                            Experience seamless gaming with instant loading times, cross-platform compatibility, and a constantly expanding library of premium games. Join thousands of players who have discovered the future of online gaming - simple, accessible, and endlessly entertaining.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Feature Cards -->
+                <div class="col-lg-6">
+                    <div class="about-features-grid">
+                        <div class="about-feature-card">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h5>Zero Downloads</h5>
+                            <p>Play instantly in your browser without any downloads, installations, or storage requirements. Just click and play!</p>
+                        </div>
+                        
+                        <div class="about-feature-card">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-th-large"></i>
+                            </div>
+                            <h5>20+ Genres</h5>
+                            <p>From action and adventure to puzzles and educational games, explore our diverse collection spanning over 20 different genres.</p>
+                        </div>
+                        
+                        <div class="about-feature-card">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-feather-alt"></i>
+                            </div>
+                            <h5>Lightweight Games</h5>
+                            <p>Our games are optimized for performance, ensuring smooth gameplay without heavy resource usage on your device.</p>
+                        </div>
+                        
+                        <div class="about-feature-card">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h5>Instant Play</h5>
+                            <p>No waiting, no loading screens. Start playing immediately with our fast-loading, browser-optimized gaming platform.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Premium Subscription Section -->
+    <section id="premium" class="py-5 grey-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Try Free. Play Unlimited.</h2>
+                    <p class="lead mb-0">Unlimited play, no ads, and early game drops — the premium way.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="premium-card card h-100 shadow-lg border-0">
+                        <div class="card-body text-center p-4">
+                            <h3 class="premium-title mb-3">Premium Access</h3>
+                            <div class="premium-price mb-3">
+                                <span class="price-amount">€38.95</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <div class="trial-badge mb-4">
+                                <span class="badge bg-success px-3 py-2">3-day trial</span>
+                            </div>
+                            <ul class="premium-features list-unstyled mb-4">
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Unlimited access to all games
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    No ads, uninterrupted gaming
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Early access to new releases
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Cancel anytime
+                                </li>
+                            </ul>
+                            <button class="btn btn-primary btn-lg mb-3 w-100">
+                                <i class="fas fa-play me-2"></i>Start Free Trial
+                            </button>
+                            <p class="premium-disclaimer text-muted small">
+                                Start with a 3-day free trial - then enjoy unlimited access for just €38.95/month. No ads, exclusive games, and early access to new releases. Cancel anytime.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+
+
+    <!-- Footer -->
+    <footer class="playnetiq-footer text-white py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Brand Section -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand mb-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="footer-logo me-3">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h4 class="footer-brand-name mb-0">Playnetiq</h4>
+                        </div>
+                        <p class="footer-tagline mb-4">No downloads, no ads, no interruption - just pure fun!</p>
+                        <div class="payment-methods">
+                            <span class="payment-badge visa">VISA</span>
+                            <span class="payment-badge mastercard">MC</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Info Section -->
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h5 class="footer-section-title mb-3">Info</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#about" class="footer-link">About</a></li>
+                        <li><a href="#contact" class="footer-link">Contact Support</a></li>
+                        <li><a href="#cancel" class="footer-link">Cancel Subscription</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal Section -->
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h5 class="footer-section-title mb-3">Legal</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#terms" class="footer-link">Terms of Service</a></li>
+                        <li><a href="#privacy" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="#refund" class="footer-link">Refund Policy</a></li>
+                        <li><a href="#subscription" class="footer-link">Subscription Terms</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Love Message -->
+                <div class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center align-items-center">
+                    <div class="footer-love-message text-end">
+                        <p class="mb-0">
+                            <i class="fas fa-heart text-success me-2"></i>
+                            Made with love for gamers worldwide
+                            <i class="fas fa-rocket ms-2 color-secondary"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="footer-divider my-4">
+            
+            <!-- Bottom Section -->
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="footer-copyright mb-0" data-nosnippet>© 2025 Playnetiq. All rights reserved.</p>
+                    <div class="footer-company mb-0" data-nosnippet style="display: none;">
+                        AryaMG LTD<br>
+                        Evripidou 5, Paralimni, 5290, Famagusta, Cyprus
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-social">
+                        <a href="#" class="social-link me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn position-fixed bottom-0 end-0 m-4 rounded-circle d-none" style="background-color: var(--primary-color); border-color: var(--primary-color); color: var(--white-color); z-index: 1000;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn position-fixed bottom-0 end-0 m-4 rounded-circle d-none" style="background-color: var(--primary-color); border-color: var(--primary-color); color: var(--white-color); z-index: 1000;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

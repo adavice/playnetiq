@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WVZPCLL");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta
+      name="keywords"
+      content="games, car games, html5 games, new games, fun games, cool games, play games, best games,
+       Skill games, Classic games,  quiz,  skill,  educational,  shooting,  casino,  bubble-shooter,  dress-up,  adventure,  time-management,  Mind games,  sports,  tower-defense,  racing,  animals,  strategy,  arcade,  platform,   board-and-card,  action, "
+    />
+    <script type="application/x-javascript">
+      addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <!-- css -->
+    <link
+      href="./assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="/assets/css/popup-box.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="./assets/css/style.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!--// css -->
+  </head>
+  <body style="min-height: 100vh; display: flex; flex-direction: column">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WVZPCLL"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="fas fa-gamepad me-2"></i>Playnetiq
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">
+                <i class="fas fa-home me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#games">
+                <i class="fas fa-gamepad me-1"></i>Games
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">
+                <i class="fas fa-envelope me-1"></i>Contact Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cancel">
+                <i class="fas fa-credit-card me-1"></i>Cancel Subscription
+              </a>
+            </li>
+          </ul>
+
+          <div class="d-flex">
+            <button class="btn btn-outline-light me-2" type="button">
+              <i class="fas fa-user-plus me-1"></i>Sign Up
+            </button>
+            <button class="btn btn-light" type="button">
+              <i class="fas fa-sign-in-alt me-1"></i>Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- gallery -->
+    <div
+      class="gallery-ltpwrlayouts py-5"
+      id="gallery"
+      style="min-height: 100vh; flex: 1 0 auto;"
+    >
+      <div class="container">
+        <h2
+          class="display-5 fw-bold mb-4 text-center"
+          style="color: var(--secondary-color)"
+        >
+          All games
+        </h2>
+        <div class="row">
+          <!-- Genre Selector Left Column -->
+          <div class="col-lg-2 mb-4 genre-selector">
+            <ul class="sorter list-group shadow-sm p-2 bg-white rounded"></ul>
+          </div>
+          <!-- Games Grid Right Column -->
+          <div class="col-lg-10">
+            <div
+              id="games-grid"
+              class="d-flex flex-column justify-content-between"
+            >
+              <div class="gallery-grids row g-4 d-flex" id="games-list">
+                <!-- Games will be rendered here by JS -->
+              </div>
+              <nav>
+                <ul class="pagination justify-content-center" id="pagination">
+                  <!-- Pagination will be rendered here by JS -->
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer class="playnetiq-footer text-white py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Brand Section -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand mb-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="footer-logo me-3">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h4 class="footer-brand-name mb-0">Playnetiq</h4>
+                        </div>
+                        <p class="footer-tagline mb-4">No downloads, no ads, no interruption - just pure fun!</p>
+                        <div class="payment-methods">
+                            <span class="payment-badge visa">VISA</span>
+                            <span class="payment-badge mastercard">MC</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Info Section -->
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h5 class="footer-section-title mb-3">Info</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#about" class="footer-link">About</a></li>
+                        <li><a href="#contact" class="footer-link">Contact Support</a></li>
+                        <li><a href="#cancel" class="footer-link">Cancel Subscription</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal Section -->
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h5 class="footer-section-title mb-3">Legal</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#terms" class="footer-link">Terms of Service</a></li>
+                        <li><a href="#privacy" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="#refund" class="footer-link">Refund Policy</a></li>
+                        <li><a href="#subscription" class="footer-link">Subscription Terms</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Love Message -->
+                <div class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center align-items-center">
+                    <div class="footer-love-message text-end">
+                        <p class="mb-0">
+                            <i class="fas fa-heart text-success me-2"></i>
+                            Made with love for gamers worldwide
+                            <i class="fas fa-rocket ms-2 color-secondary"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="footer-divider my-4">
+            
+            <!-- Bottom Section -->
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="footer-copyright mb-0" data-nosnippet>© 2025 Playnetiq. All rights reserved.</p>
+                    <div class="footer-company mb-0" data-nosnippet style="display: none;">
+                        AryaMG LTD<br>
+                        Evripidou 5, Paralimni, 5290, Famagusta, Cyprus
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-social">
+                        <a href="#" class="social-link me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <button
+      id="backToTop"
+      class="btn position-fixed bottom-0 end-0 m-4 rounded-circle d-none"
+      style="
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--white-color);
+        z-index: 1000;
+      "
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- //footer -->
+    <!-- js -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/popup-box.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/games.js"></script> <!-- Ensure this script is properly linked -->
+    <!-- //js -->
+
+  </body>
+</html>
