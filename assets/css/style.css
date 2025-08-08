@@ -4,7 +4,7 @@
 :root {
     /* Main 5-Color Trendy Palette */
     --primary-color: #ffffff;          /* Pure White - Main */
-    --secondary-color: #5e60ce;        /* Vibrant Indigo - Secondary */
+    --secondary-color: #7678ef;        /* Vibrant Indigo - Secondary */
     --accent-color: #1a1a1a;           /* Deep Charcoal - Accent */
     --success-color: #00d4aa;          /* Modern Teal - Success/Actions */
     --neutral-color: #f5f5f7;          /* Light Gray - Backgrounds */
@@ -41,6 +41,10 @@ body {
     font-family: var(--font-family);
     line-height: 1.6;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 /* Smooth Scrolling */
@@ -54,6 +58,10 @@ html {
 .display-5 {
     color: var(--secondary-color) !important;
     font-weight: 700;
+}
+
+.text-white {
+    color: var(--primary-color) !important;
 }
 
 /* Hero Section */
@@ -495,7 +503,6 @@ html {
     border: 1px solid rgba(255, 255, 255, 0.8);
     position: relative;
     overflow: hidden;
-    margin-bottom: 4rem;
 }
 
 .about-content-container::before {
@@ -1020,7 +1027,7 @@ html {
 
 /* Size Variants */
 .btn-sm {
-    padding: 10px 24px;
+    padding: 6px 24px;
     font-size: 0.85rem;
 }
 
@@ -1404,8 +1411,25 @@ a[href*="cat=Word"] .genre-icon {
 
 /* Genre section background */
 .grey-section {
-    background: #f8f9fa;
+    background: linear-gradient(183deg,hsla(0,0%,5%,0) 2.79%,rgba(255,0,245,.04) 59.69%,rgba(0,110,245,.09) 95.41%),linear-gradient(180deg,hsla(0,0%,5%,0),#0d0d0d),#0d0d0d;
     position: relative;
+}
+
+/* Particle System Styles */
+.grey-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.grey-section > .container,
+.grey-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ensure particles don't interfere with interactions */
+.grey-section canvas {
+    pointer-events: none !important;
 }
 
 /* Footer Styles */
@@ -1516,12 +1540,59 @@ a[href*="cat=Word"] .genre-icon {
     cursor: pointer;
 }
 
-.sorter .list-group-item.active,
-.sorter .list-group-item:hover {
+.sorter .list-group-item.active {
     background: linear-gradient(90deg, var(--secondary-color) 60%, var(--success-color) 100%);
     color: #fff;
 }
 
+/* Genre cloud styling for mobile */
+@media (max-width: 768px) {
+  .sorter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sorter .genre-link {
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .sorter .list-group-item {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+.play-button {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+/* Ensure all game cards in a row have the same height */
+.game-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ensure cards stretch to the same height */
+}
+
+.game-card .card-body {
+  flex-grow: 1; /* Allow the body to grow and align content */
+}
 /* Games Grid */
 .gallery-grids {
     margin-top: 0;
@@ -1654,9 +1725,105 @@ a[href*="cat=Word"] .genre-icon {
     overflow-y: auto;
 }
 
-@media (max-width: 576px) {
-    .pagination .page-link {
-        padding: 0.45rem 0.7rem;
-        font-size: 0.98rem;
-    }
+.terms {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.address-image {
+    margin-left: -5px;
+    mix-blend-mode: darken;
+}
+
+/* Enhanced Toast Notifications */
+.toast {
+  backdrop-filter: blur(10px);
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+.toast-header {
+  border-radius: 12px 12px 0 0 !important;
+  font-weight: 600;
+  padding: 12px 16px;
+}
+
+.toast-body {
+  padding: 16px !important;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.toast .btn-close {
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+.toast .btn-close:hover {
+  opacity: 1;
+}
+
+/* Specific toast type enhancements */
+.toast.bg-success {
+  background: linear-gradient(135deg, #28a745, #20c997) !important;
+}
+
+.toast.bg-danger {
+  background: linear-gradient(135deg, #dc3545, #fd7e14) !important;
+}
+
+.toast.bg-warning {
+  background: linear-gradient(135deg, #ffc107, #fd7e14) !important;
+  color: #000 !important;
+}
+
+.toast.bg-info {
+  background: linear-gradient(135deg, #17a2b8, #6f42c1) !important;
+}
+
+/* Animation enhancements */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast.show {
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* Payment Icons Styling */
+.payment-methods {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.payment-icon {
+  font-size: 32px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.payment-icon:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.payment-icon.visa {
+  color: #1A1F71;
+}
+
+.payment-icon.mastercard {
+  color: #EB001B;
+}
+
+/* Remove old payment badge styles if they exist */
+.payment-badge {
+  display: none;
 }

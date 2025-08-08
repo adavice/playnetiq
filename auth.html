@@ -1,118 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Authentication</title>
-  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card shadow">
-          <div class="card-header text-center">
-            <ul class="nav nav-tabs card-header-tabs" id="authTabs" role="tablist">
-              <li class="nav-item">
-                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
-              </li>
-              <li class="nav-item">
-                <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button" role="tab" aria-controls="signup" aria-selected="false">Sign Up</button>
-              </li>
-              <li class="nav-item">
-                <button class="nav-link" id="forgot-tab" data-bs-toggle="tab" data-bs-target="#forgot" type="button" role="tab" aria-controls="forgot" aria-selected="false">Forgot Password?</button>
-              </li>
-            </ul>
-          </div>
-          <div class="card-body">
-            <div class="tab-content" id="authTabsContent">
-              <!-- Login Form -->
-              <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                <form>
-                  <div class="mb-3">
-                    <label for="loginEmail" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="loginPassword" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
-                  </div>
-                  <div class="d-grid">
-                    <button type="submit" class="btn btn-primary">Login</button>
-                  </div>
-                </form>
-              </div>
-              <!-- Signup Form -->
-              <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
-                <form>
-                  <div class="mb-3">
-                    <label for="signupName" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="signupName" placeholder="Enter your full name" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="signupEmail" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="signupEmail" placeholder="Enter your email" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="signupPassword" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="signupPassword" placeholder="Create a password" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Confirm your password" required>
-                  </div>
-                  <div class="d-grid">
-                    <button type="submit" class="btn btn-success">Sign Up</button>
-                  </div>
-                </form>
-              </div>
-              <!-- Forgot Password Form -->
-              <div class="tab-pane fade" id="forgot" role="tabpanel" aria-labelledby="forgot-tab">
-                <form>
-                  <div class="mb-3">
-                    <label for="forgotEmail" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="forgotEmail" placeholder="Enter your email" required>
-                  </div>
-                  <div class="d-grid">
-                    <button type="submit" class="btn btn-warning">Reset Password</button>
-                  </div>
-                </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication</title>
+    <link
+      href="./assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-gamepad me-2"></i>Playnetiq
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./games.html">
+                            <i class="fas fa-gamepad me-1"></i>Games
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./cancel.html">
+                            <i class="fas fa-credit-card me-1"></i>Cancel Subscription
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex">
+                    <!-- Login Button -->
+                    <a class="btn btn-outline-light me-2 login-btn" href="./auth.html">
+                        <i class="fas fa-user-plus me-1"></i>Login
+                    </a>
+                    <!-- Username Display -->
+                    <div class="d-flex align-items-center username-display d-none">
+                        <span class="text-white me-3" id="usernameHolder">Welcome, User</span>
+                        <button class="btn btn-outline-light" id="logoutButton">
+                            <i class="fas fa-sign-out-alt me-1"></i>Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow">
+            <div class="card-header text-center">
+              <ul
+                class="nav nav-tabs card-header-tabs"
+                id="authTabs"
+                role="tablist"
+              >
+                <li class="nav-item">
+                  <button
+                    class="nav-link active"
+                    id="login-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#login"
+                    type="button"
+                    role="tab"
+                    aria-controls="login"
+                    aria-selected="true"
+                  >
+                    Login
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    id="signup-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#signup"
+                    type="button"
+                    role="tab"
+                    aria-controls="signup"
+                    aria-selected="false"
+                  >
+                    Sign Up
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    id="forgot-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#forgot"
+                    type="button"
+                    role="tab"
+                    aria-controls="forgot"
+                    aria-selected="false"
+                  >
+                    Forgot Password?
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <div class="tab-content" id="authTabsContent">
+                <!-- Login Form -->
+                <div
+                  class="tab-pane fade show active"
+                  id="login"
+                  role="tabpanel"
+                  aria-labelledby="login-tab"
+                >
+                  <form>
+                    <div class="mb-3">
+                      <label for="loginEmail" class="form-label"
+                        >Email address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="loginPassword" class="form-label"
+                        >Password</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                      />
+                    </div>
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-primary">
+                        Login
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!-- Signup Form -->
+                <div
+                  class="tab-pane fade"
+                  id="signup"
+                  role="tabpanel"
+                  aria-labelledby="signup-tab"
+                >
+                  <form>
+                    <div class="mb-3">
+                      <label for="signupName" class="form-label"
+                        >Full Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="signupName"
+                        placeholder="Enter your full name"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="signupEmail" class="form-label"
+                        >Email address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="signupEmail"
+                        placeholder="Enter your email"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="signupPassword" class="form-label"
+                        >Password</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="signupPassword"
+                        placeholder="Create a password"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="signupConfirmPassword" class="form-label"
+                        >Confirm Password</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="signupConfirmPassword"
+                        placeholder="Confirm your password"
+                        required
+                      />
+                    </div>
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-success">
+                        Sign Up
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!-- Forgot Password Form -->
+                <div
+                  class="tab-pane fade"
+                  id="forgot"
+                  role="tabpanel"
+                  aria-labelledby="forgot-tab"
+                >
+                  <form>
+                    <div class="mb-3">
+                      <label for="forgotEmail" class="form-label"
+                        >Email address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="forgotEmail"
+                        placeholder="Enter your email"
+                        required
+                      />
+                    </div>
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-warning">
+                        Reset Password
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card-footer text-center">
-            <small class="text-muted">By signing up, you agree to our <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Policy</a>.</small>
+            <div
+              class="card-footer text-center"
+              id="signupFooter"
+              style="display: none"
+            >
+              <small class="text-muted">
+                By signing up, you agree to our
+                <a href="./terms.html">Terms of Service</a> and
+                <a href="./privacy.html">Privacy Policy</a>.
+              </small>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Toast Notifications -->
-  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-    <div id="errorToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body">
-          <!-- Error message will be dynamically inserted here -->
+    <footer class="playnetiq-footer text-white py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Brand Section -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand mb-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="footer-logo me-3">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h4 class="footer-brand-name mb-0">Playnetiq</h4>
+                        </div>
+                        <p class="footer-tagline mb-4">No downloads, no ads, no interruption - just pure fun!</p>
+                        <div class="payment-methods">
+                            <i class="fab fa-cc-visa payment-icon visa" title="Visa"></i>
+                            <i class="fab fa-cc-mastercard payment-icon mastercard" title="Mastercard"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Info Section -->
+                <div class="col-lg-2 col-md-3 col-6 mb-4">
+                  <h5 class="footer-section-title mb-3">Info</h5>
+                  <ul class="footer-links list-unstyled">
+                    <li>
+                      <a href="./contact.html" class="footer-link">Contact Support</a>
+                    </li>
+                    <li>
+                      <a href="./cancel.html" class="footer-link">Cancel Subscription</a>
+                    </li>
+                  </ul>
+                </div>
+                
+                <!-- Legal Section -->
+                <div class="col-lg-2 col-md-3 col-6 mb-4">
+                  <h5 class="footer-section-title mb-3">Legal</h5>
+                  <ul class="footer-links list-unstyled">
+                    <li><a href="./terms.html" class="footer-link">Terms of Service</a></li>
+                    <li><a href="./privacy.html" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="./refund.html" class="footer-link">Refund Policy</a></li>
+                    <li>
+                      <a href="./subscription.html" class="footer-link"
+                        >Subscription Terms</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                
+                <!-- Love Message -->
+                <div
+                  class="col-lg-4 col-md-12 col-12 mb-4 d-flex justify-content-center align-items-center"
+                >
+                    <div class="footer-love-message text-end">
+                        <p class="mb-0">
+                            <i class="fas fa-heart text-success me-2"></i>
+                            Made with love for gamers worldwide
+                            <i class="fas fa-rocket ms-2 color-secondary"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="footer-divider my-4">
+            
+            <!-- Bottom Section -->
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="footer-copyright mb-0" data-nosnippet>© 2025 Playnetiq. All rights reserved.</p>
+                    <img style="max-width: 170px; opacity: .6;" class="address-image" src="./assets/images/address.jpg" alt="">
+                </div>
+                <div class="col-md-6 text-md-end d-flex justify-content-md-end">
+                    <div class="footer-social">
+                        <a href="#" class="social-link me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </footer>
+    <!-- Toast Notifications -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+      <div
+        id="errorToast"
+        class="toast align-items-center text-bg-danger border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">
+            <!-- Error message will be dynamically inserted here -->
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="./assets/js/bootstrap.min.js"></script> <!-- Use the locally downloaded bootstrap.min.js -->
-  <script>
-    function showErrorToast(message) {
-      const toastElement = document.getElementById('errorToast');
-      const toastBody = toastElement.querySelector('.toast-body');
-      toastBody.textContent = message;
-      const toast = new bootstrap.Toast(toastElement);
-      toast.show();
-    }
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/particles.js"></script>
+    <script>
+      function showErrorToast(message) {
+        const toastElement = document.getElementById("errorToast");
+        const toastBody = toastElement.querySelector(".toast-body");
+        toastBody.textContent = message;
+        const toast = new bootstrap.Toast(toastElement);
+        toast.show();
+      }
 
-    // Example usage: showErrorToast('Invalid email or password.');
-  </script>
-</body>
+      // Example usage: showErrorToast('Invalid email or password.');
+    </script>
+    <script>
+      // Show footer only on Sign Up tab
+      const signupFooter = document.getElementById("signupFooter");
+      const authTabs = document.getElementById("authTabs");
+      const tabButtons = authTabs.querySelectorAll('[data-bs-toggle="tab"]');
+
+      function toggleFooter(e) {
+        // Use event target if available, otherwise fallback to current active tab
+        let activeTabId;
+        if (e && e.target) {
+          activeTabId = e.target.id;
+        } else {
+          const activeTab = document.querySelector(".nav-link.active");
+          activeTabId = activeTab ? activeTab.id : "";
+        }
+        if (activeTabId === "signup-tab") {
+          signupFooter.style.display = "";
+        } else {
+          signupFooter.style.display = "none";
+        }
+      }
+
+      tabButtons.forEach((btn) =>
+        btn.addEventListener("shown.bs.tab", toggleFooter)
+      );
+      // Initial check
+      toggleFooter();
+    </script>
+    <script type="module">
+      import { login, signup, forgotPassword } from './assets/js/authApi.js';
+      import { authService } from './assets/js/authService.js';
+
+      // Login form submission
+      document.querySelector('#login form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+
+        try {
+          const response = await login(email, password);
+          if (response.success) {
+            authService.login(response.data);
+            window.showToast('Login successful! Redirecting...', 'success');
+            setTimeout(() => {
+              window.location.href = 'index.html'; // Redirect to homepage
+            }, 2000);
+          } else {
+            window.showToast(response.message || 'Login failed!', 'error');
+          }
+        } catch (error) {
+          console.error('Login error:', error);
+          window.showToast('An error occurred during login.', 'error');
+        }
+      });
+
+      // Signup form submission
+      document.querySelector('#signup form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const username = document.getElementById('signupName').value;
+        const email = document.getElementById('signupEmail').value;
+        const password = document.getElementById('signupPassword').value;
+        const confirmPassword = document.getElementById('signupConfirmPassword').value;
+
+        if (password !== confirmPassword) {
+          window.showToast('Passwords do not match!', 'error');
+          return;
+        }
+
+        try {
+          const response = await signup(username, email, password);
+          if (response.success) {
+            window.showToast('Signup successful! Please log in.', 'success');
+            document.getElementById('login-tab').click(); // Switch to login tab
+          } else {
+            window.showToast(response.message || 'Signup failed!', 'error');
+          }
+        } catch (error) {
+          console.error('Signup error:', error);
+          window.showToast('An error occurred during signup.', 'error');
+        }
+      });
+
+      // Forgot password form submission
+      document.querySelector('#forgot form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const contact = document.getElementById('forgotEmail').value;
+
+        try {
+          const response = await forgotPassword(contact);
+          if (response.success) {
+            window.showToast('Password reset instructions sent!', 'success');
+          } else {
+            window.showToast(response.message || 'Failed to send reset instructions!', 'error');
+          }
+        } catch (error) {
+          console.error('Forgot password error:', error);
+          window.showToast('An error occurred during password reset.', 'error');
+        }
+      });
+    </script>
+  </body>
 </html>
