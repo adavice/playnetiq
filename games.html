@@ -99,7 +99,7 @@
                     </a>
                     <!-- Username Display -->
                     <div class="d-flex align-items-center username-display d-none">
-                        <span class="text-white me-3" id="usernameHolder">Welcome, User</span>
+                        <span class="text-white me-3" id="usernameHolder">Welcome, <b id="user_name"></b></span>
                         <button class="btn btn-outline-light" id="logoutButton">
                             <i class="fas fa-sign-out-alt me-1"></i>Logout
                         </button>
@@ -123,28 +123,17 @@
         </h2>
         <div class="row">
           <!-- Genre Selector Left Column -->
-          <div class="col-lg-2 mb-4 genre-selector">
+          <div class="col-lg-3 mb-4 genre-selector">
             <ul class="sorter list-group shadow-sm p-2 rounded">
               <a href="/games.html?cat=Family" class="genre-link">
                 <li class="list-group-item">
                   <i class="fas fa-home me-2"></i>Family
                 </li>
               </a>
-              <a href="/games.html?cat=Sports" class="genre-link">
-                <li class="list-group-item">
-                  <i class="fas fa-football-ball me-2"></i>Sports
-                </li>
-              </a>
-              <a href="/games.html?cat=Puzzle" class="genre-link">
-                <li class="list-group-item">
-                  <i class="fas fa-puzzle-piece me-2"></i>Puzzle
-                </li>
-              </a>
-              <!-- Add more genres as needed -->
             </ul>
           </div>
           <!-- Games Grid Right Column -->
-          <div class="col-lg-10">
+          <div class="col-lg-9">
             <div
               id="games-grid"
               class="d-flex flex-column justify-content-between"
@@ -177,8 +166,7 @@
                         </div>
                         <p class="footer-tagline mb-4">No downloads, no ads, no interruption - just pure fun!</p>
                         <div class="payment-methods">
-                            <i class="fab fa-cc-visa payment-icon visa" title="Visa"></i>
-                            <i class="fab fa-cc-mastercard payment-icon mastercard" title="Mastercard"></i>
+                            <img style="max-width: 90px;" src="./assets/images/vmlogo.png" alt="">
                         </div>
                     </div>
                 </div>

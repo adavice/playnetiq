@@ -5,23 +5,101 @@ let filteredGamesCache = [];
 
 // Mapping of genres to their corresponding icons
 const genreIcons = {
-  Family: "fas fa-home",
-  Sports: "fas fa-football-ball",
-  Puzzle: "fas fa-puzzle-piece",
-  Endless: "fas fa-infinity",
-  Action: "fas fa-fist-raised",
-  Kids: "fas fa-child",
-  "Big kids": "fas fa-user-friends",
-  Strategy: "fas fa-chess",
-  Educational: "fas fa-graduation-cap",
-  Adventure: "fas fa-map",
-  Platformer: "fas fa-running",
+  "Family": "fas fa-home",
+  "Family Time": "fas fa-home",
+  "Sports": "fas fa-football-ball",
+  "Game On": "fas fa-football-ball",
+  "Puzzle": "fas fa-puzzle-piece",
+  "Brain Games": "fas fa-puzzle-piece",
+  "Endless": "fas fa-infinity",
+  "Endless Mode": "fas fa-infinity",
+  "Action": "fas fa-fist-raised",
+  "Action Zone": "fas fa-fist-raised",
+  "Strategy": "fas fa-chess",
+  "Strategy Lab": "fas fa-chess",
+  "Adventure": "fas fa-map",
+  "Adventure Quest": "fas fa-map",
+  "Educational": "fas fa-graduation-cap",
+  "Smart Play": "fas fa-graduation-cap",
+  "Board": "fas fa-dice",
+  "Tabletop Classics": "fas fa-dice",
   "Match 3": "fas fa-gem",
-  Board: "fas fa-dice",
-  Multiplayer: "fas fa-users",
-  Memory: "fas fa-brain",
-  Word: "fas fa-font",
-  Cards: "fas fa-heart", // Updated icon for "Cards" genre
+  "Match Madness": "fas fa-gem",
+  "Platformer": "fas fa-running",
+  "Jump & Run": "fas fa-running",
+  "Multiplayer": "fas fa-users",
+  "Multiplayer Arena": "fas fa-users",
+  "Memory": "fas fa-brain",
+  "Memory Challenge": "fas fa-brain",
+  "For Children": "fas fa-child",
+  "Teenage Games": "fas fa-user-friends",
+  "Word": "fas fa-font",
+  "Card": "fas fa-heart",
+  "Cards": "fas fa-heart",
+  "Arcade": "fas fa-gamepad",
+  "Racing": "fas fa-flag-checkered",
+  "Shooting": "fas fa-bullseye",
+  "Casino": "fas fa-coins",
+  "Quiz": "fas fa-question",
+  "Animals": "fas fa-paw",
+  "Bubble Shooter": "fas fa-dot-circle",
+  "Dress Up": "fas fa-tshirt",
+  "Time Management": "fas fa-clock",
+  "Tower Defense": "fas fa-shield-alt",
+  "Platform": "fas fa-shoe-prints",
+  "Classic": "fas fa-cube",
+  "Skill": "fas fa-lightbulb",
+  "Mind": "fas fa-brain",
+  "Educational Games": "fas fa-book",
+  "Adventure Games": "fas fa-hat-wizard",
+  "Sports Games": "fas fa-futbol",
+  "Action Games": "fas fa-bolt",
+  "Puzzle Games": "fas fa-puzzle-piece",
+  "Board Games": "fas fa-chess-board",
+  "Strategy Games": "fas fa-chess-knight",
+  "Multiplayer Games": "fas fa-network-wired",
+  "Memory Games": "fas fa-brain",
+  "Match Games": "fas fa-th",
+  "Platform Games": "fas fa-shoe-prints",
+  "Arcade Games": "fas fa-gamepad",
+  "Racing Games": "fas fa-flag-checkered",
+  "Shooting Games": "fas fa-crosshairs",
+  "Casino Games": "fas fa-dice",
+  "Quiz Games": "fas fa-question-circle",
+  "Animal Games": "fas fa-dog",
+  "Bubble Shooter Games": "fas fa-bullseye",
+  "Dress Up Games": "fas fa-tshirt",
+  "Time Management Games": "fas fa-hourglass-half",
+  "Tower Defense Games": "fas fa-fort-awesome",
+  // fallback for unknown genres
+  "Other": "fas fa-star"
+};
+
+// Update genre names for display
+const genreDisplayNames = {
+  "Family": "Family Time",
+  "Puzzle": "Brain Games",
+  "Action": "Action Zone",
+  "Endless": "Endless Mode",
+  "Sports": "Game On",
+  "Strategy": "Strategy Lab",
+  "Adventure": "Adventure Quest",
+  "Educational": "Smart Play",
+  "Board": "Tabletop Classics",
+  "Match 3": "Match Madness",
+  "Platformer": "Jump & Run",
+  "Multiplayer": "Multiplayer Arena",
+  "Memory": "Memory Challenge",
+  "Kids": "For Children",
+  "Big Kids": "For Children",
+  "Young Kids": "For Children",
+  // Grouping weird/foreign or variant genres to their relative categories
+  "Abenteuer": "Adventure Quest",
+  "abenteuer": "Adventure Quest",
+  "Action": "Action Zone",
+  "action": "Action Zone",
+  "Aktion": "Action Zone",
+  "aktion": "Action Zone",
 };
 
 // Main initialization
@@ -60,7 +138,22 @@ function renderGenres() {
   gamesDataCache.forEach((game) => {
     if (game.genres) {
       game.genres.split(",").forEach((genre) => {
-        if (genre.trim()) genres.add(genre.trim());
+        let trimmed = genre.trim();
+        // Normalize weird/foreign or variant genres
+        let normalizedGenre = genreDisplayNames[trimmed] || trimmed;
+        if (
+          ["Kids", "Big Kids", "Big kids", "Young Kids", "Young kids"].includes(trimmed)
+        ) {
+          normalizedGenre = "For Children";
+        }
+        // Group "Abenteuer", "abenteuer" to Adventure Quest, "action", "Aktion", "aktion" to Action Zone
+        if (["Abenteuer", "abenteuer"].includes(trimmed)) {
+          normalizedGenre = "Adventure Quest";
+        }
+        if (["Action", "action", "Aktion", "aktion"].includes(trimmed)) {
+          normalizedGenre = "Action Zone";
+        }
+        genres.add(normalizedGenre);
       });
     }
   });
@@ -139,7 +232,22 @@ function filterGamesByGenre(category = "") {
   filteredGamesCache = category
     ? gamesDataCache.filter((game) =>
         game.genres &&
-        game.genres.split(",").map(g => g.trim()).includes(category)
+        game.genres.split(",").some((g) => {
+          let trimmed = g.trim();
+          let normalizedGenre = genreDisplayNames[trimmed] || trimmed;
+          if (
+            ["Kids", "Big Kids", "Big kids", "Young Kids", "Young kids"].includes(trimmed)
+          ) {
+            normalizedGenre = "For Children";
+          }
+          if (["Abenteuer", "abenteuer"].includes(trimmed)) {
+            normalizedGenre = "Adventure Quest";
+          }
+          if (["Action", "action", "Aktion", "aktion"].includes(trimmed)) {
+            normalizedGenre = "Action Zone";
+          }
+          return normalizedGenre === category;
+        })
       )
     : gamesDataCache;
 
@@ -171,6 +279,7 @@ function renderGames(games) {
             <div class="card-body">
               <h5 class="card-title">${game.title || "Game Title"}</h5>
               <p class="card-text">${game.short_description || "Game description goes here."}</p>
+              <p class="card-genre">${genreDisplayNames[game.genres] || game.genres}</p>
               <div class="play-button">
                 <button class="btn btn-primary" data-game-url="${game.url}">Play</button>
               </div>
