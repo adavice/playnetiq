@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WVZPCLL');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta name="keywords" content="games, car games, html5 games, new games, fun games, cool games, play games, best games,
+       Skill games, Classic games,  quiz,  skill,  educational,  shooting,  casino,  bubble-shooter,  dress-up,  adventure,  time-management,  Mind games,  sports,  tower-defense,  racing,  animals,  strategy,  arcade,  platform,   board-and-card,  action, ">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link rel="icon" type="image/png" href="./brainstove.png" />
+    <!-- css -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--// css -->
+    <!-- font -->
+
+    <!-- //font -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/login.js"></script>
+</head>
+<body class="signUp cc_flow">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVZPCLL"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- banner -->
+	<div class="header">
+		<a href="contactus.html"> <div  id="warning">
+			<div class="container">
+				<span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<g>
+	<path d="M12,0C5.373,0,0,5.373,0,12s5.373,12,12,12s12-5.373,12-12S18.627,0,12,0z M12,19.66   c-0.938,0-1.58-0.723-1.58-1.66c0-0.964,0.669-1.66,1.58-1.66c0.963,0,1.58,0.696,1.58,1.66C13.58,18.938,12.963,19.66,12,19.66z    M12.622,13.321c-0.239,0.815-0.992,0.829-1.243,0c-0.289-0.956-1.316-4.585-1.316-6.942c0-3.11,3.891-3.125,3.891,0   C13.953,8.75,12.871,12.473,12.622,13.321z"/>
+</g>
+</svg>                    Have a Problem? Contact Us!</span>
+			</div>
+		</div>
+        </a>
+		<!-- Navbar -->
+		<nav class="container">
+			<div class="navbar-header transparent">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a  href="index.html"><img src="./images/logo_brainstove.png" alt=""></a>
+			</div>
+
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li ><a href="index.html">Home</a></li>
+					<li ><a href="about.html">About</a></li>
+					<li ><a href="games.html">Games</a></li>
+
+					<li  class="important"><a href="contactus.html">Contact Us</a></li>
+				</ul>
+				<ul id="sub_menu">
+<!--					if unlogged-->
+					<li><a href="./login.html">Login</a></li>
+					<li><a href="./signup.html">Join</a></li>
+<!--					if unlogged-->
+
+<!--					if logged-->
+					<li style="display: none"><a  href="./profile.html">Profile</a></li>
+<!--					if logged-->
+					<li><a href="./cancel.html">Cancel Subscription</a></li>
+				</ul>
+
+			</div>
+
+		</nav>
+
+		<!-- //Slider -->
+
+	</div>
+<!-- banner -->
+
+<div class="container">
+    <div class="cc_overlay">
+        <div class="close_x">+</div>
+        <div id="message_proc"><h3>Payment Processing...</h3>
+            <span> Please do not close the page</span>
+            <img class="loading_gif" src="./images/loading.gif" alt="">
+        </div>
+        <span id="message_error"></span>
+        <div id="message_success">
+            <h3>Registration is complete!</h3>
+
+            <span>Enjoy our services</span>
+        </div>
+    </div>
+<div class="blog">
+        <div class="col-md-6 wthree_blog_left">
+
+            <div class="agileits_reply">
+                <h3 class="membership_title">
+                    <img src="./images/ssl2.png" alt="">
+                    Secure Credit Card Payment
+                </h3>
+                <span class="secure-hint">This is secure encrypted payment</span>
+                <div class="error-holder">
+                    <span id="cc_form_error"></span>
+                </div>
+            <form method="post" class="cardForm">
+                    <span><input type="text" id="cardNumber" name="cardNumber" placeholder="Card Number" required=""></span>
+                    <span><input type="text" id="cardName" name="cardName" placeholder="Name on Card" required=""><span class="glyphicon glyphicon-question-sign"><div class="cardTip tipRight"><img
+                            src="./images/cardTip2.jpg" alt=""></div></span></span>
+                    <span><input type="text" id="expMonth" maxlength="2" name="expMonth" placeholder="Exp. Month" required=""><span class="glyphicon glyphicon-question-sign"><div class="cardTip tipLeft"><img
+                            src="./images/cardTip1.jpg" alt=""></div></span></span>
+                    <span><input type="text" id="expYear" maxlength="2" name="expYear" placeholder="Exp. Year" required=""><span class="glyphicon glyphicon-question-sign"><div class="cardTip "><img
+                            src="./images/cardTip1.jpg" alt=""></div></span></span>
+                    <span><input type="text" id="cvv2" name="cvv2" placeholder="CVV2" required=""><span class="glyphicon glyphicon-question-sign"><div class="cardTip tipRight"><img
+                            src="./images/cardTip3.jpg" alt=""></div></span></span>
+                    <span class="form-hint">Authentication charge: <b>TOTAL OF 1 EUR</b> (will be refunded back to you)</span>
+                <input class="button" type="submit" value="Pay">
+            </form> 
+            </div>
+
+
+
+            <div class="plate">
+                <span class="form-hint2">The transaction will appear as Brainstove.com on your credit card bill.</span>
+
+                <span class="form-hint2">You are to be billed by Radinet LTD. RadinetLTD is located at 4 Charalambou Pettemerides Str, 2042 Strovolos, Nicosia, Cyprus.</span>
+
+                <span class="form-hint2">You agree to a 3-day trial membership & 28.95 EUR/month subcription by completing this purchase. You must acknowledge that unless you cancel within due time, your subscription will be continued in the full 28-day membership at the price of 28.95 EUR.</span>
+            </div>
+            <div class="payment_large" >
+                <img src="./images/mastercard-2.png">
+                <img src="./images/visa_white.png">
+                <img src="./images/mastercard-3.png">
+            </div>
+        </div>
+    <div class="col-md-6 wthree_blog_right">
+
+        <div class="ltpwragile_flickr_posts">
+            <img src="./images/contactgames.png" alt="">
+   <div class="clearfix"> </div>
+        </div>
+
+    </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!-- footer -->
+<div class="footer">
+
+    <div class="container">
+        <div class="col-md-4 footer-right-ltpwr">
+
+            <p>Brainstove is where the fun awaits! </p>
+            <p class="agileinfo">Players from across the world and of appropriate age can indulge in the world of
+                games!</p>
+        </div>
+        <div class="col-md-4 footer-middle-ltpwr">
+            <a href="index.html"><img src="./images/logo_brainstove.png" alt=""></a>
+        </div>
+        <div class="col-md-4 footer-left-ltpwr">
+            <ul>
+                <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></li>
+                <li><a href="mailto:support@Brainstove.com">
+                    <h6>support@Brainstove.com</h6>
+                </a></li>
+            </ul>
+            <ul>
+                <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></li>
+                <li>
+                    <a><h6>+357 95123165</h6></a>
+                </li>
+            </ul>
+            <ul>
+                <li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></li>
+                <li>
+                    <h6><img style="width: 100%; filter: brightness(1.2);" src="data:image/png;base64,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" alt="" /></h6>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="gradline"></div>
+    <div class="links">
+        <a href="./policy.html">Privacy Policy</a>
+        <a href="./terms.html">Terms &amp; Conditions</a>
+        <a href="./refund.html">Refund Policy</a>
+        <a href="./profile.html">Profile</a>
+        <a href="./cancel.html">Cancel Subscription</a>
+    </div>
+    <div class="gradline"></div>
+    <div class="copyright">
+        <p>&copy;
+            <script>document.write(new Date().getFullYear())</script>
+            www.brainstove.com. All Rights Reserved.</p>
+<img style="width: 180px; display: block; margin: auto; filter: brightness(1.2);" src="data:image/png;base64,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" alt="" />
+    
+    </div>
+</div>
+<!-- //footer -->
+</body>
+<script>
+    $('.close_x').on('click', function () {
+        $('.cc_overlay').fadeOut(100);
+    });
+
+
+</script>
+</html>

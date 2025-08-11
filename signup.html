@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Payment</title>
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-gamepad me-2"></i>Playnetiq
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <i class="fas fa-home me-1"></i>Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="games.html">
+              <i class="fas fa-gamepad me-1"></i>Games
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">
+              <i class="fas fa-envelope me-1"></i>Contact Us
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cancel">
+              <i class="fas fa-credit-card me-1"></i>Cancel Subscription
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="payment-container grey-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-10">
+          <div class="payment-card">
+            
+            <!-- Payment Header -->
+            <div class="payment-header">
+              <div class="ssl-badge">
+                <i class="fas fa-lock me-2"></i>SSL Secured
+              </div>
+              <h2 class="mb-3">Secure Payment</h2>
+              <p class="mb-0">Your payment information is encrypted and secure</p>
+            </div>
+            
+            <div class="row g-0">
+              <!-- Payment Form -->
+              <div class="col-lg-8">
+                <div class="p-4 mt-4">
+                  
+                  <!-- Trial Highlight -->
+                  <div class="trial-highlight">
+                    <h4 class="mb-2"><i class="fas fa-gift me-2"></i>3-Day Free Trial</h4>
+                    <p class="mb-0">Authentication charge: <strong>€1.00</strong> (refunded immediately)</p>
+                  </div>
+                  
+                  <!-- Error Alert -->
+                  <div class="error-alert" id="cc_form_error">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <span></span>
+                  </div>
+                  
+                  <!-- Payment Form -->
+                  <form method="post" class="cardForm">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="Card Number" required>
+                      <label for="cardNumber"><i class="fas fa-credit-card me-2"></i>Card Number</label>
+                    </div>
+                    
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="cardName" name="cardName" placeholder="Name on Card" required>
+                      <label for="cardName"><i class="fas fa-user me-2"></i>Name on Card</label>
+                    </div>
+                    
+                    <div class="row g-3">
+                      <div class="col-md-4">
+                        <div class="form-floating">
+                          <input type="text" class="form-control" id="expMonth" maxlength="2" name="expMonth" placeholder="MM" required>
+                          <label for="expMonth">Month</label>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-floating">
+                          <input type="text" class="form-control" id="expYear" maxlength="2" name="expYear" placeholder="YY" required>
+                          <label for="expYear">Year</label>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-floating">
+                          <input type="text" class="form-control" id="cvv2" name="cvv2" placeholder="CVV" maxlength="4" required>
+                          <label for="cvv2">CVV</label>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Payment Button -->
+                    <button type="submit" class="payment-btn mt-4">
+                      <i class="fas fa-lock me-2"></i>Complete Secure Payment
+                    </button>
+                  </form>
+                  
+                  <!-- Card Icons -->
+                  <div class="card-icons">
+                    <i class="fab fa-cc-visa payment-icon visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard payment-icon mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-maestro payment-icon maestro" title="Maestro"></i>
+                  </div>
+                  
+                </div>
+              </div>
+              
+              <!-- Sidebar Info -->
+              <div class="col-lg-4">
+                <div class="p-4 h-100 d-flex flex-column mt-4">
+                  <img src="./assets/images/games_small.jpg" alt="Games" class="img-fluid mb-4 rounded">
+                  
+                  <div class="text-center">
+                    <h5 class="fw-bold mb-3" style="color: var(--secondary-color);">Join Thousands of Players</h5>
+                    <p style="color: var(--muted-color);">Access hundreds of premium games instantly after your trial period.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Billing Information -->
+            <div class="billing-info">
+              <h5><i class="fas fa-info-circle me-2"></i>Billing Information</h5>
+              <p><strong>Billing Descriptor:</strong> The transaction will appear as "Brainstove.com" on your credit card statement.</p>
+              <p><strong>Company:</strong> You are being billed by Radinet LTD, located at 4 Charalambou Pettemerides Str, 2042 Strovolos, Nicosia, Cyprus.</p>
+              <p><strong>Subscription Terms:</strong> By completing this purchase, you agree to a 3-day trial membership followed by a €28.95/month subscription. Unless cancelled within the trial period, your subscription will automatically continue at the full monthly rate.</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="playnetiq-footer text-white py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Brand Section -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand mb-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="footer-logo me-3">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h4 class="footer-brand-name mb-0">Playnetiq</h4>
+                        </div>
+                        <p class="footer-tagline mb-4">No downloads, no ads, no interruption - just pure fun!</p>
+                        <div class="payment-methods">
+                            <i class="fab fa-cc-visa payment-icon visa" title="Visa"></i>
+                            <i class="fab fa-cc-mastercard payment-icon mastercard" title="Mastercard"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Info Section -->
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h5 class="footer-section-title mb-3">Info</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="./contact.html" class="footer-link">Contact Support</a></li>
+                        <li><a href="./cancel.html" class="footer-link">Cancel Subscription</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal Section -->
+                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+                    <h5 class="footer-section-title mb-3">Legal</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="./terms.html" class="footer-link">Terms of Service</a></li>
+                        <li><a href="./privacy.html" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="./refund.html" class="footer-link">Refund Policy</a></li>
+                        <li><a href="./subscription.html" class="footer-link">Subscription Terms</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Love Message -->
+                <div class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center align-items-center">
+                    <div class="footer-love-message text-end">
+                        <p class="mb-0">
+                            <i class="fas fa-heart text-success me-2"></i>
+                            Made with love for gamers worldwide
+                            <i class="fas fa-rocket ms-2 color-secondary"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="footer-divider my-4">
+            
+            <!-- Bottom Section -->
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="footer-copyright mb-0" data-nosnippet>© 2025 Playnetiq. All rights reserved.</p>
+                    <img style="max-width: 170px; opacity: .6;" class="address-image" src="./assets/images/address.jpg" alt="">
+                </div>
+                <div class="col-md-6 text-md-end d-flex justify-content-md-end">
+                    <div class="footer-social">
+                        <a href="#" class="social-link me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+  <script src="./assets/js/bootstrap.min.js"></script>
+  
+  <script>
+    // Add input formatting for card number
+    document.getElementById('cardNumber').addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '');
+      let formattedValue = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+      if (formattedValue !== e.target.value) {
+        e.target.value = formattedValue;
+      }
+    });
+    
+    // Add validation for expiry month
+    document.getElementById('expMonth').addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length === 1 && parseInt(value) > 1) {
+        e.target.value = '0' + value;
+      } else if (value.length === 2 && parseInt(value) > 12) {
+        e.target.value = '12';
+      }
+    });
+    
+    // Add validation for CVV
+    document.getElementById('cvv2').addEventListener('input', function (e) {
+      e.target.value = e.target.value.replace(/\D/g, '');
+    });
+  </script>
+</body>
+</html>

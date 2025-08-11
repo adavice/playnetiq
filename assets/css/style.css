@@ -1823,7 +1823,135 @@ a[href*="cat=Word"] .genre-icon {
   color: #EB001B;
 }
 
+.payment-icon.maestro {
+  color: #0066CC;
+}
+
+/* Card icons in signup form */
+.card-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.card-icons .payment-icon {
+  font-size: 40px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.card-icons .payment-icon:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
 /* Remove old payment badge styles if they exist */
 .payment-badge {
   display: none;
 }
+
+.payment-container {
+  min-height: 100vh;
+  padding: 60px 0;
+}
+.payment-card {
+      background: var(--white-color);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px var(--card-shadow);
+      overflow: hidden;
+      margin-top: -40px;
+      position: relative;
+      z-index: 2;
+    }
+    .payment-header {
+      background: linear-gradient(135deg, var(--success-color), var(--secondary-color));
+      padding: 30px;
+      text-align: center;
+      color: var(--white-color);
+    }
+    .ssl-badge {
+      background: rgba(255,255,255,0.2);
+      border-radius: 50px;
+      padding: 10px 20px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .form-floating {
+      margin-bottom: 20px;
+    }
+    .form-floating input {
+      border: 2px solid var(--neutral-color);
+      border-radius: 10px;
+      padding: 20px 15px 10px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+    .form-floating input:focus {
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 0.2rem rgba(118, 120, 239, 0.25);
+    }
+    .form-floating label {
+      font-weight: 600;
+      color: var(--muted-color);
+    }
+    .payment-btn {
+      background: linear-gradient(135deg, var(--secondary-color), var(--success-color));
+      border: none;
+      border-radius: 15px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--white-color);
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+    .payment-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(118, 120, 239, 0.3);
+      background: linear-gradient(135deg, var(--success-color), var(--secondary-color));
+    }
+    .card-icons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .card-icons img {
+      height: 40px;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+    }
+    .billing-info {
+      background: var(--neutral-color);
+      border-radius: 15px;
+      padding: 25px;
+      margin-top: 30px;
+    }
+    .billing-info h5 {
+      color: var(--dark-color);
+      margin-bottom: 20px;
+    }
+    .billing-info p {
+      font-size: 14px;
+      color: var(--muted-color);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .trial-highlight {
+      background: linear-gradient(135deg, var(--success-color), var(--secondary-color));
+      color: var(--white-color);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .error-alert {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f1aeb5;
+      border-radius: 10px;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      display: none;
+    }
+ 
