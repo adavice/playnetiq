@@ -699,6 +699,25 @@
           ></button>
         </div>
       </div>
+      <div
+        id="successToast"
+        class="toast align-items-center text-bg-success border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">
+            <!-- Success message will be dynamically inserted here -->
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
     </div>
 
     <script src="./assets/js/bootstrap.min.js"></script>
@@ -713,7 +732,15 @@
         toast.show();
       }
 
-      // Example usage: showErrorToast('Invalid email or password.');
+      function showSuccessToast(message) {
+        const toastElement = document.getElementById("successToast");
+        const toastBody = toastElement.querySelector(".toast-body");
+        toastBody.textContent = message;
+        const toast = new bootstrap.Toast(toastElement);
+        toast.show();
+      }
+
+      // Example usage: showSuccessToast('Login successful!');
     </script>
     <script>
       // Show footer only on Sign Up tab
@@ -756,17 +783,16 @@
         try {
           const response = await login(email, password);
           if (response.success) {
-            authService.login(response.data);
-            window.showToast('Login successful! Redirecting...', 'success');
+            showSuccessToast('Login successful! Redirecting...');
             setTimeout(() => {
               window.location.href = 'index.html'; // Redirect to homepage
             }, 2000);
           } else {
-            window.showToast(response.message || 'Login failed!', 'error');
+            showErrorToast(response.message || 'Login failed!');
           }
         } catch (error) {
           console.error('Login error:', error);
-          window.showToast('An error occurred during login.', 'error');
+          showErrorToast('An error occurred during login.');
         }
       });
 

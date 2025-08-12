@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://playnetiq.com/api'; // Replace with your actual API base URL
+const API_BASE_URL = 'https://playnetiq.com/'; // Replace with your actual API base URL
 
 export async function login(email, password) {
     const response = await fetch(`${API_BASE_URL}`, {
