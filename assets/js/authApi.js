@@ -33,7 +33,7 @@ export async function forgotPassword(contact) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             action: 'forgot_password',
-            contact  // Can be either phone or email
+            email  // Can be either phone or email
         })
     });
     return response.json();

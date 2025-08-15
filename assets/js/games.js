@@ -102,34 +102,27 @@ const genreDisplayNames = {
   "aktion": "Action Zone",
 };
 
-// Main initialization
-async function initialize() {
-  await fetchGames();
-  renderGenres();
-  runGenreFilterFromUrl();
-}
-
-// Fetch games data
-async function fetchGames() {
+// Unified fetchGamesData function
+async function fetchGamesData() {
+  if (gamesDataCache) {
+    return gamesDataCache;
+  }
   try {
     const response = await fetch("/assets/js/json/marketjs.json");
     const data = await response.json();
     gamesDataCache = Object.values(data.data);
+    return gamesDataCache;
   } catch (error) {
     console.error("Error fetching games:", error);
+    return [];
   }
 }
 
-function fetchGamesData() {
-  if (gamesDataCache) {
-    return Promise.resolve({ data: gamesDataCache });
-  }
-  return fetch("/assets/js/json/marketjs.json")
-    .then((response) => response.json())
-    .then((data) => {
-      gamesDataCache = Object.values(data.data);
-      return { data: gamesDataCache };
-    });
+// Main initialization
+async function initialize() {
+  gamesDataCache = await fetchGamesData();
+  renderGenres();
+  runGenreFilterFromUrl();
 }
 
 // Render genre list
@@ -265,29 +258,29 @@ function renderGamesPage(page = 1) {
 }
 
 // Render games list
-function renderGames(games) {
-  const gamesList = document.getElementById("games-list");
-  if (!gamesList) return;
+// function renderGames(games) {
+//   const gamesList = document.getElementById("games-list");
+//   if (!gamesList) return;
 
-  gamesList.innerHTML = games.length === 0 
-    ? "<p>No games found for this category.</p>"
-    : `<div class="row game-cards-row">` + 
-      games.map(game => `
-        <div class="col-md-3 mb-3">
-          <div class="card game-card">
-            <img src="${game.banner_small}" class="card-img-top" alt="${game.title}">
-            <div class="card-body">
-              <h5 class="card-title">${game.title || "Game Title"}</h5>
-              <p class="card-text">${game.short_description || "Game description goes here."}</p>
-              <p class="card-genre">${genreDisplayNames[game.genres] || game.genres}</p>
-              <div class="play-button">
-                <button class="btn btn-primary" data-game-url="${game.url}">Play</button>
-              </div>
-            </div>
-          </div>
-        </div>`).join("") +
-      `</div>`;
-}
+//   gamesList.innerHTML = games.length === 0 
+//     ? "<p>No games found for this category.</p>"
+//     : `<div class="row game-cards-row">` + 
+//       games.map(game => `
+//         <div class="col-md-3 mb-3">
+//           <div class="card game-card">
+//             <img src="${game.banner_small}" class="card-img-top" alt="${game.title}">
+//             <div class="card-body">
+//               <h5 class="card-title">${game.title || "Game Title"}</h5>
+//               <p class="card-text">${game.short_description || "Game description goes here."}</p>
+//               <p class="card-genre">${genreDisplayNames[game.genres] || game.genres}</p>
+//               <div class="play-button">
+//                 <a class="btn btn-primary" data-game-url="">Play</a>
+//               </div>
+//             </div>
+//           </div>
+//         </div>`).join("") +
+//       `</div>`;
+// }
 
 // Toast notification function
 function showErrorToast(message) {

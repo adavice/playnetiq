@@ -161,28 +161,5 @@ document.addEventListener("DOMContentLoaded", function () {
     const protectedElement = e.target.closest(
       ".play-button button, .play-button a, #ctaButton"
     );
-
-    if (protectedElement) {
-      if (!isUserLoggedIn()) {
-        e.preventDefault();
-        showToast("Please log in to play games", "warning");
-        setTimeout(() => {
-          window.location.href = "./auth.html";
-        }, 3000);
-      } else {
-        // For logged-in users, proceed with the default action or custom logic
-        if (protectedElement.id === "ctaButton") {
-          e.preventDefault();
-          window.location.href = "./games.html";
-        } else {
-          const gameUrl = protectedElement.getAttribute("data-game-url");
-          if (gameUrl) {
-            e.preventDefault();
-            window.location.href = gameUrl;
-          }
-          // If it's a regular link with href and no data-game-url, the browser will follow it.
-        }
-      }
-    }
   });
 });
