@@ -93,7 +93,6 @@ const genreDisplayNames = {
   "Kids": "For Children",
   "Big Kids": "For Children",
   "Young Kids": "For Children",
-  // Grouping weird/foreign or variant genres to their relative categories
   "Abenteuer": "Adventure Quest",
   "abenteuer": "Adventure Quest",
   "Action": "Action Zone",
