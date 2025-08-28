@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     loginBtn.addEventListener('click', (e) => {
       // if it's an <a> it will navigate; if button, redirect
       if (loginBtn.tagName.toLowerCase() === 'button') {
-        window.location.href = './auth.html';
+        window.location.href = './login.html';
       }
     });
   }
