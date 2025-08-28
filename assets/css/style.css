@@ -2175,6 +2175,269 @@ a[href*="cat=Word"] .genre-icon {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.table>thead {
-    vertical-align: middle;
+.table > thead {
+  vertical-align: middle;
+}
+
+/* Desktop Category Buttons */
+@media (min-width: 769px) {
+  .category-cloud {
+    justify-content: flex-start !important;
+  }
+
+  .category-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .category-tag:hover {
+    background: var(--secondary-color);
+    color: var(--white-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    text-decoration: none;
+  }
+
+  .category-tag.active {
+    background: var(--secondary-color);
+    color: var(--white-color);
+  }
+}
+
+/* Mobile Category Cloud */
+@media (max-width: 768px) {
+  .category-cloud {
+    line-height: 2.5;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .category-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 3px 4px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    border: 1px solid rgba(118, 120, 239, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .category-tag::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-color);
+    transition: left 0.3s ease;
+    z-index: -1;
+  }
+
+  .category-tag:hover,
+  .category-tag.active {
+    color: var(--white-color);
+    text-decoration: none;
+    border-color: var(--secondary-color);
+    transform: scale(1.05);
+  }
+
+  .category-tag:hover::before,
+  .category-tag.active::before {
+    left: 0;
+  }
+
+  /* Varied sizes for cloud effect */
+  .category-tag:nth-child(3n + 1) {
+    font-size: 0.9rem;
+    padding: 7px 14px;
+  }
+
+  .category-tag:nth-child(4n + 1) {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  .category-tag:nth-child(5n + 1) {
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
+
+  /* Popular categories get larger size */
+  .category-tag[href*="Action"],
+  .category-tag[href*="Family"],
+  .category-tag[href*="Puzzle"] {
+    font-size: 1rem !important;
+    padding: 8px 16px !important;
+    font-weight: 600;
+  }
+}
+
+.card-title {
+  color: var(--secondary-color);
+}
+
+.game-card {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+.game-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.game-image-container:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.game-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.game-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-overlay .short-description {
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0 1rem;
+  font-weight: 500;
+}
+
+.game-image-container:hover .game-overlay {
+  opacity: 1;
+}
+
+.game-image-container:hover .game-image {
+  transform: scale(1.05);
+}
+
+.pagination .page-link {
+  border-radius: 8px;
+  margin: 0 2px;
+  border: none;
+  color: #007bff;
+  font-weight: 500;
+}
+
+.pagination .page-item.active .page-link {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  border-color: #007bff;
+}
+
+
+.game_list .pagination {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game_list .pagination li {
+  margin: 0;
+}
+
+.game_list .pagination li a {
+  display: inline-block;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: var(--secondary-color);
+  background: linear-gradient(145deg, #fff 0%, #f8f9fa 100%);
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 45px;
+  text-align: center;
+}
+
+.game_list .pagination li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(118, 120, 239, 0.2), transparent);
+  transition: left 0.4s ease;
+}
+
+.game_list .pagination li a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(118, 120, 239, 0.3);
+  color: #0056b3;
+  background: linear-gradient(145deg, #e3f2fd 0%, #f8f9fa 100%);
+  border-color: var(--secondary-color);
+}
+
+.game_list .pagination li a:hover::before {
+  left: 100%;
+}
+
+.game_list .pagination li a.active {
+  background: linear-gradient(145deg, var(--secondary-color) 0%, #4a4fb5 100%);
+  color: white;
+  border-color: var(--secondary-color);
+  box-shadow: 0 6px 18px rgba(118, 120, 239, 0.4);
+  transform: scale(1.1);
+}
+
+.game_list .pagination li a.active:hover {
+  transform: translateY(-3px) scale(1.15);
+  box-shadow: 0 10px 25px rgba(118, 120, 239, 0.5);
+}
+
+@media (max-width: 768px) {
+  .game_list {
+    padding: 10px;
+    margin: 20px 0;
+  }
+  
+  .game_list .pagination li a {
+    padding: 10px 14px;
+    font-size: 13px;
+    min-width: 40px;
+  }
 }
