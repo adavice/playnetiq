@@ -832,9 +832,60 @@
         }
       }
 
-      tabButtons.forEach((btn) =>
-        btn.addEventListener("shown.bs.tab", toggleFooter)
-      );
+      // Save active tab to localStorage
+      function saveActiveTab(tabId) {
+        localStorage.setItem('activeAuthTab', tabId);
+      }
+
+      // Get saved tab from localStorage
+      function getSavedTab() {
+        return localStorage.getItem('activeAuthTab');
+      }
+
+      // Clear saved tab
+      function clearSavedTab() {
+        localStorage.removeItem('activeAuthTab');
+      }
+
+      // Load saved tab on page load
+      function loadSavedTab() {
+        const savedTab = getSavedTab();
+        if (savedTab) {
+          const savedTabButton = document.getElementById(savedTab);
+          if (savedTabButton) {
+            // Remove active class from current tab
+            document.querySelectorAll('.nav-link').forEach(tab => {
+              tab.classList.remove('active');
+              tab.setAttribute('aria-selected', 'false');
+            });
+            document.querySelectorAll('.tab-pane').forEach(pane => {
+              pane.classList.remove('show', 'active');
+            });
+
+            // Activate saved tab
+            savedTabButton.classList.add('active');
+            savedTabButton.setAttribute('aria-selected', 'true');
+            
+            const targetPane = document.querySelector(savedTabButton.getAttribute('data-bs-target'));
+            if (targetPane) {
+              targetPane.classList.add('show', 'active');
+            }
+            
+            toggleFooter();
+          }
+        }
+      }
+
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("shown.bs.tab", (e) => {
+          toggleFooter(e);
+          saveActiveTab(e.target.id);
+        });
+      });
+
+      // Load saved tab on page load
+      document.addEventListener('DOMContentLoaded', loadSavedTab);
+      
       // Initial check
       toggleFooter();
     </script>
@@ -854,15 +905,17 @@
             const response = await login(email, password);
             if (response.success) {
               showSuccessToast("Login successful! Redirecting...");
+              // Clear saved tab on successful login
+              localStorage.removeItem('activeAuthTab');
               setTimeout(() => {
-                window.location.href = "index.html"; // Redirect to homepage
+                window.location.href = "index.html";
               }, 2000);
             } else {
-              showErrorToast(response.message || "Login failed!");
+              showErrorToast(response.message || "Invalid email or password. Please try again.");
             }
           } catch (error) {
             console.error("Login error:", error);
-            showErrorToast("An error occurred during login.");
+            showErrorToast("Network error. Please check your connection and try again.");
           }
         });
 
@@ -871,29 +924,52 @@
         .querySelector("#signup form")
         .addEventListener("submit", async (e) => {
           e.preventDefault();
-          const username = document.getElementById("signupName").value;
-          const email = document.getElementById("signupEmail").value;
-          const password = document.getElementById("signupPassword").value;
-          const confirmPassword = document.getElementById(
-            "signupConfirmPassword"
-          ).value;
+          
+          // Get form data
+          const formData = {
+            name: document.getElementById("name").value,
+            lname: document.getElementById("lname").value,
+            address: document.getElementById("address").value,
+            post_code: document.getElementById("code").value,
+            city: document.getElementById("city").value,
+            phone: document.getElementById("phone").value,
+            country: document.getElementById("country").value,
+            email: document.getElementById("signupEmail").value
+          };
 
-          if (password !== confirmPassword) {
-            window.showToast("Passwords do not match!", "error");
-            return;
+          // Validate required fields
+          const requiredFields = ['name', 'lname', 'address', 'post_code', 'city', 'phone', 'country', 'email'];
+          for (const field of requiredFields) {
+            if (!formData[field]) {
+              showErrorToast(`Please fill in all required fields.`);
+              return;
+            }
+          }
+
+          // Validate checkboxes
+          const checkboxes = ['checkBox1', 'checkBox2', 'checkBox3'];
+          for (const checkboxId of checkboxes) {
+            if (!document.getElementById(checkboxId).checked) {
+              showErrorToast("Please accept all terms and conditions to continue.");
+              return;
+            }
           }
 
           try {
-            const response = await signup(username, email, password);
+            const response = await signup(formData);
             if (response.success) {
-              window.showToast("Signup successful! Please log in.", "success");
-              document.getElementById("login-tab").click(); // Switch to login tab
+              showSuccessToast("Registration successful! Redirecting to payment...");
+              // Clear saved tab on successful signup
+              localStorage.removeItem('activeAuthTab');
+              setTimeout(() => {
+                window.location.href = "payment.html";
+              }, 2000);
             } else {
-              window.showToast(response.message || "Signup failed!", "error");
+              showErrorToast(response.message || "Registration failed. Please try again.");
             }
           } catch (error) {
             console.error("Signup error:", error);
-            window.showToast("An error occurred during signup.", "error");
+            showErrorToast("Network error. Please check your connection and try again.");
           }
         });
 
@@ -902,24 +978,25 @@
         .querySelector("#forgot form")
         .addEventListener("submit", async (e) => {
           e.preventDefault();
-          const contact = document.getElementById("forgotEmail").value;
+          const email = document.getElementById("forgotEmail").value;
+
+          if (!email) {
+            showErrorToast("Please enter your email address.");
+            return;
+          }
 
           try {
-            const response = await forgotPassword(contact);
+            const response = await forgotPassword(email);
             if (response.success) {
-              window.showToast("Password reset instructions sent!", "success");
+              showSuccessToast("Password reset instructions sent to your email!");
+              // Clear the form but keep the tab
+              document.getElementById("forgotEmail").value = "";
             } else {
-              window.showToast(
-                response.message || "Failed to send reset instructions!",
-                "error"
-              );
+              showErrorToast(response.message || "Failed to send reset instructions. Please try again.");
             }
           } catch (error) {
             console.error("Forgot password error:", error);
-            window.showToast(
-              "An error occurred during password reset.",
-              "error"
-            );
+            showErrorToast("Network error. Please check your connection and try again.");
           }
         });
     </script>
