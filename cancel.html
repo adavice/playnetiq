@@ -1,234 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cancel Membership</title>
-<link rel="icon" type="image/x-icon" href="./favicon.png">
-  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cancel Membership</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.png" />
+    <link
+      href="./assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <i class="fas fa-gamepad me-2"></i>Playnetiq
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="fas fa-gamepad me-2"></i>Playnetiq
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">
+                <i class="fas fa-home me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./games.html">
+                <i class="fas fa-gamepad me-1"></i>Games
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./contact.html">
+                <i class="fas fa-envelope me-1"></i>Contact Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./cancel.html">
+                <i class="fas fa-credit-card me-1"></i>Cancel Subscription
+              </a>
+            </li>
+          </ul>
+
+          <div class="d-flex">
+            <!-- Login Button -->
+            <a
+              class="btn btn-outline-light me-2 login-btn"
+              href="./login.html"
+            >
+              <i class="fas fa-user-plus"></i>Login
             </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./index.html">
-                            <i class="fas fa-home me-1"></i>Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./games.html">
-                            <i class="fas fa-gamepad me-1"></i>Games
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="./contact.html">
-                            <i class="fas fa-envelope me-1"></i>Contact Us
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./cancel.html">
-                            <i class="fas fa-credit-card me-1"></i>Cancel Subscription
-                        </a>
-                    </li>
-                </ul>
-                
-                <div class="d-flex">
-                    <!-- Login Button -->
-                    <button class="btn btn-outline-light me-2 login-btn" href="./login.html">
-                        <i class="fas fa-user-plus me-1"></i>Login
-                    </button>
-                    <!-- Username Display -->
-                        
-                </div>
+            <div class="logout-btn d-none">
+              <span class="user-id" id="user_id"></span>
+              <a class="btn btn-outline-light me-2" href="/?page=delcookie">
+                <i id="logout" class="fas fa-user-plus"></i> Logout
+              </a>
             </div>
+          </div>
         </div>
+      </div>
     </nav>
-  <div class=" grey-section">
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="card shadow-lg border-0 p-4">
-          <div class="card-body">
-            <h2 class="display-5 fw-bold text-center mb-4">Automatic Membership Cancellation</h2>
-            <p class="mb-4">
-              Cancel your subscription on playnetiq.com
-              <b class="text-success">FREE OF CHARGE</b>
-              using our online cancellation service.
-            </p>
-            <p class="mb-3">To cancel your subscription, use one of the two options below.</p>
-            <p class="mb-4">
-              If you still have any questions, please contact us:
-              <span class="text-success">support@playnetiq.com</span><br>
-              One of our agents will get back to you as soon as possible – this usually occurs within
-              <span class="text-success">24 hours</span> (except weekends and public holidays).
-            </p>
-            <p class="mb-5">
-              Our support center operates Mondays through Fridays, between 7 am and 4 pm GMT timezone.
-            </p>
-            <h3 class="fw-bold text-center mb-4 mt-5">To cancel your subscription please:</h3>
-            <div class="mb-5">
-              <div class="card p-4 border-0 bg-light">
-                <p class="form_descr text-success text-center mb-4">Enter the email address and password you used to register.</p>
-                <form id="home-option1-form" role="form" method="post">
-                  <input type="hidden" name="page" value="cancel">
-                  <input type="hidden" name="method" value="1">
-                  <div class="row g-3 align-items-end justify-content-center">
-                    <div class="col-md-4">
-                      <label for="home-option1-email-input" class="form-label">Email</label>
-                      <input type="email" class="form-control" name="home-option1-email-input" id="home-option1-email-input" placeholder="Email" required>
-                    </div>
-                    <div class="col-md-4">
-                      <label for="home-option1-password-input" class="form-label">Password</label>
-                      <input type="password" class="form-control" name="home-option1-password-input" id="home-option1-password-input" placeholder="Password" required>
-                    </div>
-                    <div class="col-md-4 d-grid">
-                      <button id="home-option1-submit-btn" type="submit" class="btn btn-primary btn-sm">
-                        Cancel subscription
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <h3 class="fw-bold text-center my-4">or</h3>
-            <div class="mb-5">
-              <div class="card p-4 border-0 bg-light">
-                <p class="form_descr text-success text-center mb-4" style="max-width: 90%; margin: 0 auto;">
-                  Enter the first 6 and last 4 digits of your credit card if you have lost your login information.
+    <div class="grey-section">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="card shadow-lg border-0 p-4">
+              <div class="card-body">
+                <h2 class="display-5 fw-bold text-center mb-4">
+                  Automatic Membership Cancellation
+                </h2>
+                <p class="mb-4">
+                  Cancel your subscription on playnetiq.com
+                  <b class="text-success">FREE OF CHARGE</b>
+                  using our online cancellation service.
                 </p>
-                <form id="home-option2-form" role="form" method="post">
-                  <input type="hidden" name="page" value="cancel">
-                  <input type="hidden" name="method" value="2">
-                  <div class="row g-3 align-items-end justify-content-center">
-                    <div class="col-md-3">
-                      <input type="text" maxlength="6" class="form-control cc-nums" name="home-option2-6-ccnum-input" id="home-option2-6-ccnum-input" placeholder="First 6 digits" required>
-                    </div>
-                    <div class="col-md-2 text-center d-flex align-items-center justify-content-center">
-                      <span class="fw-bold text-muted">xxxxxx</span>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="text" maxlength="4" class="form-control cc-nums" name="home-option2-4-ccnum-input" id="home-option2-4-ccnum-input" placeholder="Last 4 digits" required>
-                    </div>
-                    <div class="col-md-4 d-grid">
-                      <button id="home-option2-submit-btn" type="submit" class="btn btn-primary btn-sm">
-                        Cancel subscription
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <h3 class="fw-bold text-center mb-4 mt-5">To recover your password please:</h3>
-            <div class="mb-4">
-              <div class="card p-4 border-0 bg-light">
-                <p class="form_descr text-success text-center mb-4" style="max-width: 90%; margin: 0 auto;">
-                  Enter the email address you used to subscribe and it will be automatically sent by email.
+                <p class="mb-3">
+                  To cancel your subscription, use one of the two options below.
                 </p>
-                <form id="home-option3-form" role="form" method="post">
-                  <input type="hidden" name="page" value="cancel">
-                  <input type="hidden" name="method" value="3">
-                  <div class="row g-3 align-items-end justify-content-center">
-                    <div class="col-lg-8 col-sm-8">
-                      <label for="home-option3-email-input" class="form-label">Email</label>
-                      <input type="email" class="form-control" pattern=".{6,}" name="home-option3-email-input" id="home-option3-email-input" placeholder="Email" required>
-                    </div>
-                    <div class="col-lg-4 col-sm-4 d-grid">
-                      <button id="home-option3-submit-btn" type="submit" class="btn btn-primary btn-sm">
-                        Recover password
-                      </button>
-                    </div>
+                <p class="mb-4">
+                  If you still have any questions, please contact us:
+                  <span class="text-success">support@playnetiq.com</span><br />
+                  One of our agents will get back to you as soon as possible –
+                  this usually occurs within
+                  <span class="text-success">24 hours</span> (except weekends
+                  and public holidays).
+                </p>
+                <p class="mb-5">
+                  Our support center operates Mondays through Fridays, between 7
+                  am and 4 pm GMT timezone.
+                </p>
+                <h3 class="fw-bold text-center mb-4 mt-5">
+                  To cancel your subscription please:
+                </h3>
+                <div class="mb-5">
+                  <div class="card p-4 border-0 bg-light">
+                    <p class="form_descr text-success text-center mb-4">
+                      Enter the email address and password you used to register.
+                    </p>
+                    <form id="home-option1-form" role="form" method="post">
+                      <input type="hidden" name="page" value="cancel" />
+                      <input type="hidden" name="method" value="1" />
+                      <div
+                        class="row g-3 align-items-end justify-content-center"
+                      >
+                        <div class="col-md-4">
+                          <label
+                            for="home-option1-email-input"
+                            class="form-label"
+                            >Email</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            name="home-option1-email-input"
+                            id="home-option1-email-input"
+                            placeholder="Email"
+                            required
+                          />
+                        </div>
+                        <div class="col-md-4">
+                          <label
+                            for="home-option1-password-input"
+                            class="form-label"
+                            >Password</label
+                          >
+                          <input
+                            type="password"
+                            class="form-control"
+                            name="home-option1-password-input"
+                            id="home-option1-password-input"
+                            placeholder="Password"
+                            required
+                          />
+                        </div>
+                        <div class="col-md-4 d-grid">
+                          <button
+                            id="home-option1-submit-btn"
+                            type="submit"
+                            class="btn btn-primary btn-sm"
+                          >
+                            Cancel subscription
+                          </button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
-                </form>
+                </div>
+                <h3 class="fw-bold text-center my-4">or</h3>
+                <div class="mb-5">
+                  <div class="card p-4 border-0 bg-light">
+                    <p
+                      class="form_descr text-success text-center mb-4"
+                      style="max-width: 90%; margin: 0 auto"
+                    >
+                      Enter the first 6 and last 4 digits of your credit card if
+                      you have lost your login information.
+                    </p>
+                    <form id="home-option2-form" role="form" method="post">
+                      <input type="hidden" name="page" value="cancel" />
+                      <input type="hidden" name="method" value="2" />
+                      <div
+                        class="row g-3 align-items-end justify-content-center"
+                      >
+                        <div class="col-md-3">
+                          <input
+                            type="text"
+                            maxlength="6"
+                            class="form-control cc-nums"
+                            name="home-option2-6-ccnum-input"
+                            id="home-option2-6-ccnum-input"
+                            placeholder="First 6 digits"
+                            required
+                          />
+                        </div>
+                        <div
+                          class="col-md-2 text-center d-flex align-items-center justify-content-center"
+                        >
+                          <span class="fw-bold text-muted">xxxxxx</span>
+                        </div>
+                        <div class="col-md-3">
+                          <input
+                            type="text"
+                            maxlength="4"
+                            class="form-control cc-nums"
+                            name="home-option2-4-ccnum-input"
+                            id="home-option2-4-ccnum-input"
+                            placeholder="Last 4 digits"
+                            required
+                          />
+                        </div>
+                        <div class="col-md-4 d-grid">
+                          <button
+                            id="home-option2-submit-btn"
+                            type="submit"
+                            class="btn btn-primary btn-sm"
+                          >
+                            Cancel subscription
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <h3 class="fw-bold text-center mb-4 mt-5">
+                  To recover your password please:
+                </h3>
+                <div class="mb-4">
+                  <div class="card p-4 border-0 bg-light">
+                    <p
+                      class="form_descr text-success text-center mb-4"
+                      style="max-width: 90%; margin: 0 auto"
+                    >
+                      Enter the email address you used to subscribe and it will
+                      be automatically sent by email.
+                    </p>
+                    <form id="home-option3-form" role="form" method="post">
+                      <input type="hidden" name="page" value="cancel" />
+                      <input type="hidden" name="method" value="3" />
+                      <div
+                        class="row g-3 align-items-end justify-content-center"
+                      >
+                        <div class="col-lg-8 col-sm-8">
+                          <label
+                            for="home-option3-email-input"
+                            class="form-label"
+                            >Email</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            pattern=".{6,}"
+                            name="home-option3-email-input"
+                            id="home-option3-email-input"
+                            placeholder="Email"
+                            required
+                          />
+                        </div>
+                        <div class="col-lg-4 col-sm-4 d-grid">
+                          <button
+                            id="home-option3-submit-btn"
+                            type="submit"
+                            class="btn btn-primary btn-sm"
+                          >
+                            Recover password
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
+              <!-- card-body -->
             </div>
-          </div><!-- card-body -->
-        </div><!-- card -->
+            <!-- card -->
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
     <footer class="playnetiq-footer text-white py-5">
-        <div class="container">
-            <div class="row">
-                <!-- Brand Section -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="footer-brand mb-3">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="footer-logo me-3">
-                                <i class="fas fa-gamepad"></i>
-                            </div>
-                            <h4 class="footer-brand-name mb-0">Playnetiq</h4>
-                        </div>
-                        <p class="footer-tagline mb-4">No downloads, no ads, no interruption - just pure fun!</p>
-                        <div class="payment-methods">
-                            <img style="max-width: 90px;" src="./assets/images/vmlogo.png" alt="">
-                        </div>
-                    </div>
+      <div class="container">
+        <div class="row">
+          <!-- Brand Section -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="footer-brand mb-3">
+              <div class="d-flex align-items-center mb-3">
+                <div class="footer-logo me-3">
+                  <i class="fas fa-gamepad"></i>
                 </div>
-                
-                <!-- Info Section -->
-                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
-                    <h5 class="footer-section-title mb-3">Info</h5>
-                    <ul class="footer-links list-unstyled">
-                        <li><a href="./contact.html" class="footer-link">Contact Support</a></li>
-                        <li><a href="./cancel.html" class="footer-link">Cancel Subscription</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Legal Section -->
-                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
-                    <h5 class="footer-section-title mb-3">Legal</h5>
-                    <ul class="footer-links list-unstyled">
-                        <li><a href="./terms.html" class="footer-link">Terms of Service</a></li>
-                        <li><a href="./privacy.html" class="footer-link">Privacy Policy</a></li>
-                        <li><a href="./refund.html" class="footer-link">Refund Policy</a></li>
-                        <li><a href="./subscription.html" class="footer-link">Subscription Terms</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Love Message -->
-                <div class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center align-items-center">
-                    <div class="footer-love-message text-end">
-                        <p class="mb-0">
-                            <i class="fas fa-heart text-success me-2"></i>
-                            Made with love for gamers worldwide
-                            <i class="fas fa-rocket ms-2 color-secondary"></i>
-                        </p>
-                    </div>
-                </div>
+                <h4 class="footer-brand-name mb-0">Playnetiq</h4>
+              </div>
+              <p class="footer-tagline mb-4">
+                No downloads, no ads, no interruption - just pure fun!
+              </p>
+              <div class="payment-methods">
+                <img
+                  style="max-width: 90px"
+                  src="./assets/images/vmlogo.png"
+                  alt=""
+                />
+              </div>
             </div>
-            
-            <hr class="footer-divider my-4">
-            
-            <!-- Bottom Section -->
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="footer-copyright mb-0" data-nosnippet>© 2025 Playnetiq. All rights reserved.</p>
-                    <img style="max-width: 170px; opacity: .6;" class="address-image" src="./assets/images/address.jpg" alt="">
-                </div>
-                <div class="col-md-6 text-md-end d-flex justify-content-md-end">
-                    <div class="footer-social">
-                        <a href="#" class="social-link me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
+          </div>
+
+          <!-- Info Section -->
+          <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+            <h5 class="footer-section-title mb-3">Info</h5>
+            <ul class="footer-links list-unstyled">
+              <li>
+                <a href="./contact.html" class="footer-link">Contact Support</a>
+              </li>
+              <li>
+                <a href="./cancel.html" class="footer-link"
+                  >Cancel Subscription</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Legal Section -->
+          <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
+            <h5 class="footer-section-title mb-3">Legal</h5>
+            <ul class="footer-links list-unstyled">
+              <li>
+                <a href="./terms.html" class="footer-link">Terms of Service</a>
+              </li>
+              <li>
+                <a href="./privacy.html" class="footer-link">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="./refund.html" class="footer-link">Refund Policy</a>
+              </li>
+              <li>
+                <a href="./subscription.html" class="footer-link"
+                  >Subscription Terms</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Love Message -->
+          <div
+            class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center align-items-center"
+          >
+            <div class="footer-love-message text-end">
+              <p class="mb-0">
+                <i class="fas fa-heart text-success me-2"></i>
+                Made with love for gamers worldwide
+                <i class="fas fa-rocket ms-2 color-secondary"></i>
+              </p>
             </div>
+          </div>
         </div>
+
+        <hr class="footer-divider my-4" />
+
+        <!-- Bottom Section -->
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="footer-copyright mb-0" data-nosnippet>
+              © 2025 Playnetiq. All rights reserved.
+            </p>
+            <img
+              style="max-width: 170px; opacity: 0.6"
+              class="address-image"
+              src="./assets/images/address.jpg"
+              alt=""
+            />
+          </div>
+          <div class="col-md-6 text-md-end d-flex justify-content-md-end">
+            <div class="footer-social">
+              <a href="#" class="social-link me-3"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link me-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-link me-3"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
-  <script src="./assets/js/bootstrap.min.js"></script>
-</body>
+    <script src="./assets/js/bootstrap.min.js"></script>
+  </body>
 </html>

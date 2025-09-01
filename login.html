@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Authentication</title>
-    <link rel="icon" type="image/x-icon" href="./favicon.png">
+    <link rel="icon" type="image/x-icon" href="./favicon.png" />
     <link
       href="./assets/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,49 +18,64 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <i class="fas fa-gamepad me-2"></i>Playnetiq
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="fas fa-gamepad me-2"></i>Playnetiq
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">
+                <i class="fas fa-home me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./games.html">
+                <i class="fas fa-gamepad me-1"></i>Games
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">
+                <i class="fas fa-envelope me-1"></i>Contact Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./cancel.html">
+                <i class="fas fa-credit-card me-1"></i>Cancel Subscription
+              </a>
+            </li>
+          </ul>
+
+          <div class="d-flex">
+            <!-- Login Button -->
+            <a
+              class="btn btn-outline-light me-2 login-btn"
+              href="./login.html"
+            >
+              <i class="fas fa-user-plus"></i>Login
             </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./index.html">
-                            <i class="fas fa-home me-1"></i>Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./games.html">
-                            <i class="fas fa-gamepad me-1"></i>Games
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./contact.html">
-                            <i class="fas fa-envelope me-1"></i>Contact Us
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./cancel.html">
-                            <i class="fas fa-credit-card me-1"></i>Cancel Subscription
-                        </a>
-                    </li>
-                </ul>
-                
-                <div class="d-flex">
-                    <!-- Login Button -->
-                    <button class="btn btn-outline-light me-2 login-btn" href="./login.html">
-                        <i class="fas fa-user-plus me-1"></i>Login
-                    </button>
-                    <!-- Username Display -->
-                        
-                </div>
+            <div class="logout-btn d-none">
+              <span class="user-id" id="user_id"></span>
+              <a class="btn btn-outline-light me-2" href="/?page=delcookie">
+                <i id="logout" class="fas fa-user-plus"></i> Logout
+              </a>
             </div>
+          </div>
         </div>
+      </div>
     </nav>
     <div class="container py-5">
       <div class="row justify-content-center">
@@ -228,7 +243,9 @@
                     </div>
                     <div class="row mb-3">
                       <div class="col-md-6">
-                        <label for="phone" class="form-label">Phone Number</label>
+                        <label for="phone" class="form-label"
+                          >Phone Number</label
+                        >
                         <input
                           type="text"
                           class="form-control"
@@ -246,7 +263,9 @@
                           name="country"
                           required
                         >
-                          <option value="" disabled selected>Select your country</option>
+                          <option value="" disabled selected>
+                            Select your country
+                          </option>
                           <option value="1">Andorra</option>
                           <option value="2">United Arab Emirates</option>
                           <option value="3">Afghanistan</option>
@@ -276,7 +295,9 @@
                           <option value="27">Bermuda</option>
                           <option value="28">Brunei Darussalam</option>
                           <option value="29">Bolivia</option>
-                          <option value="30">Bonaire; Sint Eustatius; Saba</option>
+                          <option value="30">
+                            Bonaire; Sint Eustatius; Saba
+                          </option>
                           <option value="31">Brazil</option>
                           <option value="32">Bahamas</option>
                           <option value="33">Bhutan</option>
@@ -314,7 +335,9 @@
                           <option value="65">Ethiopia</option>
                           <option value="66">Finland</option>
                           <option value="67">Fiji</option>
-                          <option value="68">Falkland Islands (MALVINAS)</option>
+                          <option value="68">
+                            Falkland Islands (MALVINAS)
+                          </option>
                           <option value="69">Micronesia</option>
                           <option value="70">Faroe Islands</option>
                           <option value="71">France</option>
@@ -346,7 +369,9 @@
                           <option value="97">Israel</option>
                           <option value="98">Isle of Man</option>
                           <option value="99">India</option>
-                          <option value="100">British Indian Ocean Territory</option>
+                          <option value="100">
+                            British Indian Ocean Territory
+                          </option>
                           <option value="101">Iraq</option>
                           <option value="102">Iran</option>
                           <option value="103">Iceland</option>
@@ -361,7 +386,9 @@
                           <option value="112">Kiribati</option>
                           <option value="113">Comoros</option>
                           <option value="114">Saint Kitts and Nevis</option>
-                          <option value="115">Korea Democratic People's Republic of</option>
+                          <option value="115">
+                            Korea Democratic People's Republic of
+                          </option>
                           <option value="116">Korea Republic of</option>
                           <option value="117">Kuwait</option>
                           <option value="118">Cayman Islands</option>
@@ -464,15 +491,21 @@
                           <option value="215">Turkey</option>
                           <option value="216">Trinidad and Tobago</option>
                           <option value="217">Tuvalu</option>
-                          <option value="218">Taiwan; Republic of China (ROC)</option>
+                          <option value="218">
+                            Taiwan; Republic of China (ROC)
+                          </option>
                           <option value="219">Tanzania</option>
                           <option value="220">Ukraine</option>
                           <option value="221">Uganda</option>
                           <option value="222">United States</option>
                           <option value="223">Uruguay</option>
                           <option value="224">Uzbekistan</option>
-                          <option value="225">Holy See (VATICAN City State)</option>
-                          <option value="226">Saint Vincent and The Grenadines</option>
+                          <option value="225">
+                            Holy See (VATICAN City State)
+                          </option>
+                          <option value="226">
+                            Saint Vincent and The Grenadines
+                          </option>
                           <option value="227">Venezuela</option>
                           <option value="228">Virgin Islands (BRITISH)</option>
                           <option value="229">Virgin Islands (U.S.)</option>
@@ -490,7 +523,9 @@
                     </div>
                     <div class="row mb-3">
                       <div class="col-md-12">
-                        <label for="signupEmail" class="form-label">Email</label>
+                        <label for="signupEmail" class="form-label"
+                          >Email</label
+                        >
                         <input
                           type="email"
                           class="form-control"
@@ -523,10 +558,11 @@
                         />
                         <label class="form-check-label" for="checkBox2">
                           I understand this is a
-                          <a href="./subscription.html">subscription service</a>, that continues
-                          automatically after 3 trial days (if it is not terminated before).
-                          There will be a 1 EUR charge for authorization purposes. This charge
-                          will be reverted back.
+                          <a href="./subscription.html">subscription service</a
+                          >, that continues automatically after 3 trial days (if
+                          it is not terminated before). There will be a 1 EUR
+                          charge for authorization purposes. This charge will be
+                          reverted back.
                         </label>
                       </div>
                       <div class="form-check">
@@ -537,16 +573,23 @@
                           required
                         />
                         <label class="form-check-label" for="checkBox3">
-                          I agree to a recurring monthly transaction of 38.95 EUR following a
-                          3-day trial.
+                          I agree to a recurring monthly transaction of 38.95
+                          EUR following a 3-day trial.
                         </label>
                       </div>
                     </div>
                     <div class="mb-3">
-                      <div class="cf-turnstile" data-sitekey="" data-size="flexible" theme="dark"></div>
+                      <div
+                        class="cf-turnstile"
+                        data-sitekey=""
+                        data-size="flexible"
+                        theme="dark"
+                      ></div>
                     </div>
                     <div class="d-grid">
-                      <button type="submit" class="btn btn-success">Continue</button>
+                      <button type="submit" class="btn btn-success">
+                        Continue
+                      </button>
                     </div>
                   </form>
                 </div>
@@ -595,84 +638,113 @@
       </div>
     </div>
     <footer class="playnetiq-footer text-white py-5">
-        <div class="container">
-            <div class="row">
-                <!-- Brand Section -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="footer-brand mb-3">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="footer-logo me-3">
-                                <i class="fas fa-gamepad"></i>
-                            </div>
-                            <h4 class="footer-brand-name mb-0">Playnetiq</h4>
-                        </div>
-                        <p class="footer-tagline mb-4">No downloads, no ads, no interruption - just pure fun!</p>
-                        <div class="payment-methods">
-                            <img style="max-width: 90px;" src="./assets/images/vmlogo.png" alt="">
-                        </div>
-                    </div>
+      <div class="container">
+        <div class="row">
+          <!-- Brand Section -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="footer-brand mb-3">
+              <div class="d-flex align-items-center mb-3">
+                <div class="footer-logo me-3">
+                  <i class="fas fa-gamepad"></i>
                 </div>
-                
-                <!-- Info Section -->
-                <div class="col-lg-2 col-md-3 col-6 mb-4">
-                  <h5 class="footer-section-title mb-3">Info</h5>
-                  <ul class="footer-links list-unstyled">
-                    <li>
-                      <a href="./contact.html" class="footer-link">Contact Support</a>
-                    </li>
-                    <li>
-                      <a href="./cancel.html" class="footer-link">Cancel Subscription</a>
-                    </li>
-                  </ul>
-                </div>
-                
-                <!-- Legal Section -->
-                <div class="col-lg-2 col-md-3 col-6 mb-4">
-                  <h5 class="footer-section-title mb-3">Legal</h5>
-                  <ul class="footer-links list-unstyled">
-                    <li><a href="./terms.html" class="footer-link">Terms of Service</a></li>
-                    <li><a href="./privacy.html" class="footer-link">Privacy Policy</a></li>
-                    <li><a href="./refund.html" class="footer-link">Refund Policy</a></li>
-                    <li>
-                      <a href="./subscription.html" class="footer-link"
-                        >Subscription Terms</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-                
-                <!-- Love Message -->
-                <div
-                  class="col-lg-4 col-md-12 col-12 mb-4 d-flex justify-content-center align-items-center"
+                <h4 class="footer-brand-name mb-0">Playnetiq</h4>
+              </div>
+              <p class="footer-tagline mb-4">
+                No downloads, no ads, no interruption - just pure fun!
+              </p>
+              <div class="payment-methods">
+                <img
+                  style="max-width: 90px"
+                  src="./assets/images/vmlogo.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Info Section -->
+          <div class="col-lg-2 col-md-3 col-6 mb-4">
+            <h5 class="footer-section-title mb-3">Info</h5>
+            <ul class="footer-links list-unstyled">
+              <li>
+                <a href="./contact.html" class="footer-link">Contact Support</a>
+              </li>
+              <li>
+                <a href="./cancel.html" class="footer-link"
+                  >Cancel Subscription</a
                 >
-                    <div class="footer-love-message text-end">
-                        <p class="mb-0">
-                            <i class="fas fa-heart text-success me-2"></i>
-                            Made with love for gamers worldwide
-                            <i class="fas fa-rocket ms-2 color-secondary"></i>
-                        </p>
-                    </div>
-                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Legal Section -->
+          <div class="col-lg-2 col-md-3 col-6 mb-4">
+            <h5 class="footer-section-title mb-3">Legal</h5>
+            <ul class="footer-links list-unstyled">
+              <li>
+                <a href="./terms.html" class="footer-link">Terms of Service</a>
+              </li>
+              <li>
+                <a href="./privacy.html" class="footer-link">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="./refund.html" class="footer-link">Refund Policy</a>
+              </li>
+              <li>
+                <a href="./subscription.html" class="footer-link"
+                  >Subscription Terms</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Love Message -->
+          <div
+            class="col-lg-4 col-md-12 col-12 mb-4 d-flex justify-content-center align-items-center"
+          >
+            <div class="footer-love-message text-end">
+              <p class="mb-0">
+                <i class="fas fa-heart text-success me-2"></i>
+                Made with love for gamers worldwide
+                <i class="fas fa-rocket ms-2 color-secondary"></i>
+              </p>
             </div>
-            
-            <hr class="footer-divider my-4">
-            
-            <!-- Bottom Section -->
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="footer-copyright mb-0" data-nosnippet>© 2025 Playnetiq. All rights reserved.</p>
-                    <img style="max-width: 170px; opacity: .6;" class="address-image" src="./assets/images/address.jpg" alt="">
-                </div>
-                <div class="col-md-6 text-md-end d-flex justify-content-md-end">
-                    <div class="footer-social">
-                        <a href="#" class="social-link me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <hr class="footer-divider my-4" />
+
+        <!-- Bottom Section -->
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="footer-copyright mb-0" data-nosnippet>
+              © 2025 Playnetiq. All rights reserved.
+            </p>
+            <img
+              style="max-width: 170px; opacity: 0.6"
+              class="address-image"
+              src="./assets/images/address.jpg"
+              alt=""
+            />
+          </div>
+          <div class="col-md-6 text-md-end d-flex justify-content-md-end">
+            <div class="footer-social">
+              <a href="#" class="social-link me-3"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link me-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-link me-3"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
     <!-- Toast Notifications -->
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
@@ -767,75 +839,89 @@
       toggleFooter();
     </script>
     <script type="module">
-      import { login, signup, forgotPassword } from './assets/js/authApi.js';
-      import { authService } from './assets/js/authService.js';
+      import { login, signup, forgotPassword } from "./assets/js/authApi.js";
+      import { authService } from "./assets/js/authService.js";
 
       // Login form submission
-      document.querySelector('#login form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = document.getElementById('loginEmail').value;
-        const password = document.getElementById('loginPassword').value;
+      document
+        .querySelector("#login form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const email = document.getElementById("loginEmail").value;
+          const password = document.getElementById("loginPassword").value;
 
-        try {
-          const response = await login(email, password);
-          if (response.success) {
-            showSuccessToast('Login successful! Redirecting...');
-            setTimeout(() => {
-              window.location.href = 'index.html'; // Redirect to homepage
-            }, 2000);
-          } else {
-            showErrorToast(response.message || 'Login failed!');
+          try {
+            const response = await login(email, password);
+            if (response.success) {
+              showSuccessToast("Login successful! Redirecting...");
+              setTimeout(() => {
+                window.location.href = "index.html"; // Redirect to homepage
+              }, 2000);
+            } else {
+              showErrorToast(response.message || "Login failed!");
+            }
+          } catch (error) {
+            console.error("Login error:", error);
+            showErrorToast("An error occurred during login.");
           }
-        } catch (error) {
-          console.error('Login error:', error);
-          showErrorToast('An error occurred during login.');
-        }
-      });
+        });
 
       // Signup form submission
-      document.querySelector('#signup form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const username = document.getElementById('signupName').value;
-        const email = document.getElementById('signupEmail').value;
-        const password = document.getElementById('signupPassword').value;
-        const confirmPassword = document.getElementById('signupConfirmPassword').value;
+      document
+        .querySelector("#signup form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const username = document.getElementById("signupName").value;
+          const email = document.getElementById("signupEmail").value;
+          const password = document.getElementById("signupPassword").value;
+          const confirmPassword = document.getElementById(
+            "signupConfirmPassword"
+          ).value;
 
-        if (password !== confirmPassword) {
-          window.showToast('Passwords do not match!', 'error');
-          return;
-        }
-
-        try {
-          const response = await signup(username, email, password);
-          if (response.success) {
-            window.showToast('Signup successful! Please log in.', 'success');
-            document.getElementById('login-tab').click(); // Switch to login tab
-          } else {
-            window.showToast(response.message || 'Signup failed!', 'error');
+          if (password !== confirmPassword) {
+            window.showToast("Passwords do not match!", "error");
+            return;
           }
-        } catch (error) {
-          console.error('Signup error:', error);
-          window.showToast('An error occurred during signup.', 'error');
-        }
-      });
+
+          try {
+            const response = await signup(username, email, password);
+            if (response.success) {
+              window.showToast("Signup successful! Please log in.", "success");
+              document.getElementById("login-tab").click(); // Switch to login tab
+            } else {
+              window.showToast(response.message || "Signup failed!", "error");
+            }
+          } catch (error) {
+            console.error("Signup error:", error);
+            window.showToast("An error occurred during signup.", "error");
+          }
+        });
 
       // Forgot password form submission
-      document.querySelector('#forgot form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const contact = document.getElementById('forgotEmail').value;
+      document
+        .querySelector("#forgot form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const contact = document.getElementById("forgotEmail").value;
 
-        try {
-          const response = await forgotPassword(contact);
-          if (response.success) {
-            window.showToast('Password reset instructions sent!', 'success');
-          } else {
-            window.showToast(response.message || 'Failed to send reset instructions!', 'error');
+          try {
+            const response = await forgotPassword(contact);
+            if (response.success) {
+              window.showToast("Password reset instructions sent!", "success");
+            } else {
+              window.showToast(
+                response.message || "Failed to send reset instructions!",
+                "error"
+              );
+            }
+          } catch (error) {
+            console.error("Forgot password error:", error);
+            window.showToast(
+              "An error occurred during password reset.",
+              "error"
+            );
           }
-        } catch (error) {
-          console.error('Forgot password error:', error);
-          window.showToast('An error occurred during password reset.', 'error');
-        }
-      });
+        });
     </script>
   </body>
 </html>

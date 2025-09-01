@@ -2441,3 +2441,66 @@ a[href*="cat=Word"] .genre-icon {
     min-width: 40px;
   }
 }
+
+/* Logout Button Block Styling */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logout-btn:hover {
+  transform: translateY(-1px);
+}
+
+.logout-btn .user-id {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.logout-btn .btn {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  min-width: auto;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 991.98px) {
+  .logout-btn {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 15px;
+  }
+  
+  .logout-btn .user-id {
+    max-width: 120px;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+  
+  .logout-btn .btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logout-btn .user-id {
+    max-width: 100px;
+  }
+
+  .mt-xs-2 {
+    margin-top: 1rem !important;
+  }
+}

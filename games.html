@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>Games</title>
-    <link rel="icon" type="image/x-icon" href="./favicon.png">
+    <link rel="icon" type="image/x-icon" href="./favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- Google Tag Manager -->
@@ -28,8 +28,8 @@
     <script type="application/x-javascript">
       addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
     </script>
-    <link rel="shortcut icon" href="./favicon.png">
-    <meta name="theme-color" content="#7678ef">
+    <link rel="shortcut icon" href="./favicon.png" />
+    <meta name="theme-color" content="#7678ef" />
     <!-- css -->
     <link
       href="./assets/css/bootstrap.min.css"
@@ -104,13 +104,18 @@
 
           <div class="d-flex">
             <!-- Login Button -->
-            <button
+            <a
               class="btn btn-outline-light me-2 login-btn"
               href="./login.html"
             >
-              <i class="fas fa-user-plus me-1"></i>Login
-            </button>
-            <!-- Username Display -->
+              <i class="fas fa-user-plus"></i>Login
+            </a>
+            <div class="logout-btn d-none">
+              <span class="user-id" id="user_id"></span>
+              <a class="btn btn-outline-light me-2" href="/?page=delcookie">
+                <i id="logout" class="fas fa-user-plus"></i> Logout
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -197,10 +202,7 @@
             <div class="row g-4">
               <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="game-card">
-                  <a
-                    href="/?page=game_play"
-                    class="text-decoration-none"
-                  >
+                  <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
                       <img
                         class="img-fluid rounded game-image"
@@ -218,10 +220,7 @@
               </div>
               <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="game-card">
-                  <a
-                    href="/?page=game_play"
-                    class="text-decoration-none"
-                  >
+                  <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
                       <img
                         class="img-fluid rounded game-image"
@@ -237,10 +236,7 @@
               </div>
               <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="game-card">
-                  <a
-                    href="/?page=game_play"
-                    class="text-decoration-none"
-                  >
+                  <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
                       <img
                         class="img-fluid rounded game-image"
@@ -256,10 +252,7 @@
               </div>
               <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="game-card">
-                  <a
-                    href="/?page=game_play"
-                    class="text-decoration-none"
-                  >
+                  <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
                       <img
                         class="img-fluid rounded game-image"
@@ -275,10 +268,7 @@
               </div>
               <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="game-card">
-                  <a
-                    href="/?page=game_play"
-                    class="text-decoration-none"
-                  >
+                  <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
                       <img
                         class="img-fluid rounded game-image"
@@ -294,10 +284,7 @@
               </div>
               <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="game-card">
-                  <a
-                    href="/?page=game_play"
-                    class="text-decoration-none"
-                  >
+                  <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
                       <img
                         class="img-fluid rounded game-image"
@@ -313,10 +300,7 @@
               </div>
               <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="game-card">
-                  <a
-                    href="/?page=game_play"
-                    class="text-decoration-none"
-                  >
+                  <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
                       <img
                         class="img-fluid rounded game-image"
@@ -332,10 +316,7 @@
               </div>
               <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="game-card">
-                  <a
-                    href="/?page=game_play"
-                    class="text-decoration-none"
-                  >
+                  <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
                       <img
                         class="img-fluid rounded game-image"
@@ -351,10 +332,7 @@
               </div>
               <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="game-card">
-                  <a
-                    href="/?page=game_play"
-                    class="text-decoration-none"
-                  >
+                  <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
                       <img
                         class="img-fluid rounded game-image"
@@ -370,10 +348,7 @@
               </div>
               <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="game-card">
-                  <a
-                    href="/?page=game_play"
-                    class="text-decoration-none"
-                  >
+                  <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
                       <img
                         class="img-fluid rounded game-image"
@@ -389,10 +364,7 @@
               </div>
               <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="game-card">
-                  <a
-                    href="/?page=game_play"
-                    class="text-decoration-none"
-                  >
+                  <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
                       <img
                         class="img-fluid rounded game-image"
@@ -408,10 +380,7 @@
               </div>
               <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="game-card">
-                  <a
-                    href="/?page=game_play"
-                    class="text-decoration-none"
-                  >
+                  <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
                       <img
                         class="img-fluid rounded game-image"
