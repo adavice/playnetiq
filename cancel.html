@@ -59,17 +59,20 @@
             </li>
           </ul>
 
-          <div class="d-flex">
+                    <div class="d-flex">
             <!-- Login Button -->
-            <a
-              class="btn btn-outline-light me-2 login-btn"
-              href="./login.html"
-            >
-              <i class="fas fa-user-plus"></i> Login
-            </a>
+            <div class="login-btn">
+              <a class="btn btn-outline-light me-2" href="./login.html">
+                <i class="fas fa-right-to-bracket"></i> Login
+              </a>
+              <a class="btn btn-outline-light me-2" href="./signup.html">
+                <i class="fas fa-user-plus"></i> Signup
+              </a>
+            </div>
+            <!-- logout block -->
             <div class="logout-btn d-none">
               <span class="user-id" id="user_id"></span>
-              <a class="btn btn-outline-light me-2" href="/?page=delcookie">
+              <a class="btn btn-outline-light me-2" href="/?delcookie=1">
                 <i id="logout" class="fas fa-user-plus"></i> Logout
               </a>
             </div>
@@ -384,5 +387,6 @@
       </div>
     </footer>
     <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

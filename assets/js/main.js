@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Determine login state (supports different stored shapes)
   let isLogged = false;
-  const raw = localStorage.getItem('authState') || localStorage.getItem('user');
 
   const loginBtn = document.querySelector('.login-btn');
   const logoutBtn = document.querySelector('.logout-btn');
