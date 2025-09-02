@@ -54,6 +54,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    
+    <!-- GSAP Libraries -->
+    <script src="./assets/js/libs/gsap/gsap.min.js"></script>
+    <script src="./assets/js/libs/gsap/ScrollTrigger.min.js"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -94,17 +98,14 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./cancel.html">
-                <i class="fas fa-credit-card"></i>Cancel Subscription
+                <i class="fas fa-credit-card"></i> Cancel Subscription
               </a>
             </li>
           </ul>
           <div class="d-flex">
             <!-- Login Button -->
-            <a
-              class="btn btn-outline-light me-2 login-btn"
-              href="./login.html"
-            >
-              <i class="fas fa-user-plus"></i>Login
+            <a class="btn btn-outline-light me-2 login-btn" href="./login.html">
+              <i class="fas fa-user-plus"></i> Login
             </a>
             <!-- logout block -->
             <div class="logout-btn d-none">
@@ -122,6 +123,7 @@
     <section
       id="home"
       class="hero-section py-5 position-relative overflow-hidden"
+      data-gsap="hero"
     >
       <!-- Animated Background Elements -->
       <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
@@ -132,25 +134,27 @@
       <div class="container position-relative" style="z-index: 2">
         <div class="row align-items-center min-vh-75">
           <div class="col-lg-6 mb-5">
-            <h1 class="display-4 fw-bold mb-4">Welcome to Your Gaming World</h1>
-            <p class="lead text-white mb-4">
+            <h1 class="display-4 fw-bold mb-4" data-gsap="hero-title">Welcome to Your Gaming World</h1>
+            <p class="lead text-white mb-4" data-gsap="hero-subtitle">
               Experience the ultimate gaming platform with cutting-edge
               technology and immersive gameplay. Join thousands of players
               worldwide.
             </p>
-            <a href="./games.html" class="btn btn-light btn-lg me-3">
-              <i class="fas fa-play me-2"></i>Start Playing
-            </a>
-            <a href="#about" class="btn btn-outline-light btn-lg mt-xs-2">
-              <i class="fas fa-info-circle me-2"></i>Learn More
-            </a>
+            <div data-gsap="hero-buttons">
+              <a href="./games.html" class="btn btn-light btn-lg me-3">
+                <i class="fas fa-play me-2"></i>Start Playing
+              </a>
+              <a href="#about" class="btn btn-outline-light btn-lg mt-xs-2">
+                <i class="fas fa-info-circle me-2"></i>Learn More
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Benefits Cards -->
-        <div class="row g-4">
+        <div class="row g-4" data-gsap="hero-cards">
           <div class="col-md-4">
-            <div class="hero-benefit-card text-center">
+            <div class="hero-benefit-card text-center" data-gsap-card="1">
               <div class="benefit-icon mb-3">
                 <span class="benefit-number">500+</span>
               </div>
@@ -162,7 +166,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="hero-benefit-card text-center">
+            <div class="hero-benefit-card text-center" data-gsap-card="2">
               <div class="benefit-icon mb-3">
                 <span class="benefit-number">∞</span>
               </div>
@@ -174,7 +178,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="hero-benefit-card text-center">
+            <div class="hero-benefit-card text-center" data-gsap-card="3">
               <div class="benefit-icon mb-3">
                 <span class="benefit-number">0</span>
               </div>
@@ -190,23 +194,23 @@
     </section>
 
     <!-- Featured Games Section -->
-    <section id="games" class="py-5">
+    <section id="games" class="py-5" data-gsap="games-section">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center mb-5">
+          <div class="col-lg-12 text-center mb-5" data-gsap="section-header">
             <h2 class="display-5 fw-bold">Featured Games</h2>
             <p class="lead text-muted">
               Discover our most popular and highest-rated games
             </p>
           </div>
         </div>
-        <div class="row g-4">
+        <div class="row g-4" data-gsap="games-grid">
           <div class="col-lg-4 col-md-6">
-            <div class="game-card trend-grid position-relative">
+            <div class="game-card trend-grid position-relative" data-gsap-game="1">
               <div class="game-image">
                 <img
-                  src="https://cdn.marketjs.net/games/blackjack-vegas-21/localization/en/media/graphics/promo/banners/440x280.jpg"
-                  alt="Cyber Quest"
+                  src="./assets/images/game1.jpg"
+                  alt="Blackjack Vegas 21"
                   class="img-fluid"
                 />
                 <div class="play-button">
@@ -240,24 +244,24 @@
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="game-card trend-grid position-relative">
+            <div class="game-card trend-grid position-relative" data-gsap-game="2">
               <div class="game-image">
                 <img
-                  src="https://cdn.marketjs.net/games/rally-champion/localization/en/media/graphics/promo/banners/440x280.jpg"
+                  src="./assets/images/game2.jpg"
                   alt="Space Warriors"
                   class="img-fluid"
                 />
                 <div class="play-button">
                   <a
                     class="btn btn-primary btn-sm"
-                    href="/?page=game_play&id=5981421467336704"
+                    href="/?page=game_play&id=5157218595897344"
                   >
                     <i class="fas fa-play me-1"></i>Play
                   </a>
                 </div>
               </div>
               <div class="game-info">
-                <h4 class="game-title mb-2">Rally Champion</h4>
+                <h4 class="game-title mb-2">Break the Brick</h4>
                 <div class="game-rating mb-2">
                   <div class="stars">
                     <i class="fas fa-star text-warning"></i>
@@ -269,19 +273,16 @@
                   <span class="rating-number ms-2">4.7</span>
                 </div>
                 <p class="game-description">
-                  READY, SET, GO! A new and exciting rally race game with
-                  realistic graphics. Compete in a series of race tracks to be
-                  number 1. Turn left and right while overtaking other racers.
-                  Ride on speed lanes to get an edge over your opponent.
+                  Drag the paddle left and right to catch the steel arcade. Bounce the ball against the bricks, to demolish them. Arkanoid and Breakout fans, look out for this retro arcade game.
                 </p>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="game-card trend-grid position-relative">
+            <div class="game-card trend-grid position-relative" data-gsap-game="3">
               <div class="game-image">
                 <img
-                  src="https://cdn.marketjs.net/games/wordmeister/localization/en/media/graphics/promo/banners/440x280.jpg"
+                  src="./assets/images/game3.jpg"
                   alt="Dragon Realm"
                   class="img-fluid"
                 />
@@ -322,17 +323,17 @@
     </section>
 
     <!-- Game Genres Section -->
-    <section id="genres" class="py-5 grey-section">
+    <section id="genres" class="py-5 grey-section" data-gsap="genres-section">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center mb-5">
+          <div class="col-lg-12 text-center mb-5" data-gsap="section-header">
             <h2 class="display-5 fw-bold">Game Genres</h2>
             <p class="lead text-white">
               Explore games by your favorite categories
             </p>
           </div>
         </div>
-        <div class="row g-4">
+        <div class="row g-4" data-gsap="genres-grid">
           <div class="col-lg-3 col-md-4 col-6">
             <a href="/games.html?cat=Family" class="genre-link">
               <div class="genre-card">
@@ -518,7 +519,7 @@
         </div>
       </div>
     </section>
-    <section id="about" class="about-section py-5">
+    <section id="about" class="about-section py-5" data-gsap="about-section">
       <!-- Decorative Elements -->
       <div class="about-decorative-elements">
         <div class="about-blob about-blob-1"></div>
@@ -621,7 +622,7 @@
       </div>
     </section>
     <!-- Premium Subscription Section -->
-    <section id="premium" class="py-5 grey-section">
+    <section id="premium" class="py-5 grey-section" data-gsap="premium-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center mb-5">
@@ -811,21 +812,239 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/particles.js"></script>
 
-    <!-- Smooth scroll for anchor links -->
+    <!-- GSAP Animations -->
     <script>
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
+      // Register ScrollTrigger plugin
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Set initial states
+      gsap.set("[data-gsap='hero-title']", { y: 50, opacity: 0 });
+      gsap.set("[data-gsap='hero-subtitle']", { y: 30, opacity: 0 });
+      gsap.set("[data-gsap='hero-buttons']", { y: 20, opacity: 0 });
+      gsap.set("[data-gsap-card]", { y: 60, opacity: 0, scale: 0.9 });
+
+      // Hero animations
+      const heroTl = gsap.timeline({ delay: 0.5 });
+      
+      heroTl
+        .to("[data-gsap='hero-title']", {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out"
+        })
+        .to("[data-gsap='hero-subtitle']", {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out"
+        }, "-=0.5")
+        .to("[data-gsap='hero-buttons']", {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.out"
+        }, "-=0.3");
+
+      // Hero cards staggered animation
+      gsap.to("[data-gsap-card]", {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+        stagger: 0.2,
+        delay: 1.5
+      });
+
+      // Section headers scroll animations
+      gsap.utils.toArray("[data-gsap='section-header']").forEach(header => {
+        gsap.fromTo(header.children, 
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power1.inOut",
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: header,
+              start: "top 90%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+
+      // Featured games animation
+      ScrollTrigger.create({
+        trigger: "[data-gsap='games-section']",
+        start: "top 90%",
+        onEnter: () => {
+          gsap.fromTo("[data-gsap-game]", 
+            { y: 80, opacity: 0, scale: 0.9 },
+            {
+              y: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 0.8,
+              ease: "power1.inOut",
+              stagger: 0.2
+            }
+          );
+        }
+      });
+
+      // Genre cards animation
+      ScrollTrigger.create({
+        trigger: "[data-gsap='genres-section']",
+        start: "top 90%",
+        onEnter: () => {
+          gsap.fromTo("[data-gsap='genres-grid'] .genre-card", 
+            { y: 60, opacity: 0, rotationY: 15 },
+            {
+              y: 0,
+              opacity: 1,
+              rotationY: 0,
+              duration: 0.7,
+              ease: "power1.inOut",
+              stagger: {
+                amount: 1.2,
+                from: "start"
+              }
+            }
+          );
+        }
+      });
+
+      // About section animation
+      ScrollTrigger.create({
+        trigger: "[data-gsap='about-section']",
+        start: "top 90%",
+        onEnter: () => {
+          gsap.fromTo("[data-gsap='about-section'] .about-content-container", 
+            { x: -50, opacity: 0 },
+            {
+              x: 0,
+              opacity: 1,
+              duration: 0.8,
+              ease: "power2.out"
+            }
+          );
+          
+          gsap.fromTo("[data-gsap='about-section'] .about-feature-card", 
+            { x: 50, opacity: 0, scale: 0.9 },
+            {
+              x: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 0.7,
+              ease: "power1.inOut",
+              stagger: 0.15,
+              delay: 0.3
+            }
+          );
+        }
+      });
+
+      // Premium section animation
+      ScrollTrigger.create({
+        trigger: "[data-gsap='premium-section']",
+        start: "top 80%",
+        onEnter: () => {
+          gsap.fromTo("[data-gsap='premium-section'] .premium-card", 
+            { y: 80, opacity: 0, scale: 0.95 },
+            {
+              y: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 0.8,
+              ease: "back.out(1.7)"
+            }
+          );
+        }
+      });
+
+      // Hover animations for interactive elements
+      gsap.utils.toArray(".hero-benefit-card").forEach(card => {
+        card.addEventListener("mouseenter", () => {
+          gsap.to(card, {
+            scale: 1.05,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+        
+        card.addEventListener("mouseleave", () => {
+          gsap.to(card, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+      });
+
+      // Game card hover effects
+      gsap.utils.toArray(".game-card").forEach(card => {
+        const playButton = card.querySelector(".play-button");
+        
+        card.addEventListener("mouseenter", () => {
+          gsap.to(card, {
+            y: -10,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+          
+          if (playButton) {
+            gsap.to(playButton, {
+              scale: 1.1,
+              duration: 0.2,
+              ease: "power2.out"
+            });
+          }
+        });
+        
+        card.addEventListener("mouseleave", () => {
+          gsap.to(card, {
+            y: 0,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+          
+          if (playButton) {
+            gsap.to(playButton, {
+              scale: 1,
+              duration: 0.2,
+              ease: "power2.out"
             });
           }
         });
       });
+
+      // Smooth scroll enhancement
+      gsap.utils.toArray('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            gsap.to(window, {
+              duration: 1,
+              scrollTo: {
+                y: target,
+                offsetY: 80
+              },
+              ease: "power2.inOut"
+            });
+          }
+        });
+      });
+
+      // Refresh ScrollTrigger on window resize
+      window.addEventListener("resize", () => {
+        ScrollTrigger.refresh();
+      });
     </script>
+
+    <!-- ...existing code... -->
   </body>
 </html>

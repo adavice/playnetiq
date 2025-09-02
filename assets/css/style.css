@@ -1205,7 +1205,7 @@ html {
 
 /* Game Cards */
 .game-card {
-  background: #fff;
+  background: transparent;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -1783,7 +1783,6 @@ a[href*="cat=Word"] .genre-icon {
 .game-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%; /* Ensure cards stretch to the same height */
 }
 
@@ -2222,8 +2221,7 @@ a[href*="cat=Word"] .genre-icon {
 
   .category-tag {
     display: inline-block;
-    padding: 6px 12px;
-    margin: 3px 4px;
+    padding: 4px 8px;
     color: var(--secondary-color);
     text-decoration: none;
     border-radius: 20px;
@@ -2258,31 +2256,6 @@ a[href*="cat=Word"] .genre-icon {
   .category-tag:hover::before,
   .category-tag.active::before {
     left: 0;
-  }
-
-  /* Varied sizes for cloud effect */
-  .category-tag:nth-child(3n + 1) {
-    font-size: 0.9rem;
-    padding: 7px 14px;
-  }
-
-  .category-tag:nth-child(4n + 1) {
-    font-size: 0.8rem;
-    padding: 5px 10px;
-  }
-
-  .category-tag:nth-child(5n + 1) {
-    font-size: 0.95rem;
-    padding: 8px 16px;
-  }
-
-  /* Popular categories get larger size */
-  .category-tag[href*="Action"],
-  .category-tag[href*="Family"],
-  .category-tag[href*="Puzzle"] {
-    font-size: 1rem !important;
-    padding: 8px 16px !important;
-    font-weight: 600;
   }
 }
 

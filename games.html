@@ -47,6 +47,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- GSAP Libraries -->
+    <script src="./assets/js/libs/gsap/gsap.min.js"></script>
+    <script src="./assets/js/libs/gsap/ScrollTrigger.min.js"></script>
     <!--// css -->
   </head>
   <body style="min-height: 100vh; display: flex; flex-direction: column">
@@ -108,7 +111,7 @@
               class="btn btn-outline-light me-2 login-btn"
               href="./login.html"
             >
-              <i class="fas fa-user-plus"></i>Login
+              <i class="fas fa-user-plus"></i> Login
             </a>
             <div class="logout-btn d-none">
               <span class="user-id" id="user_id"></span>
@@ -199,8 +202,8 @@
         <!-- Games Grid -->
         <div class="border-0">
           <div class="card-body p-4">
-            <div class="row g-4">
-              <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="row g-4" data-games-grid>
+              <div class="col-lg-3 col-md-4 col-sm-6" data-game-card>
                 <div class="game-card">
                   <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
@@ -218,7 +221,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-lg-3 col-md-4 col-sm-6" data-game-card>
                 <div class="game-card">
                   <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
@@ -234,7 +237,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-lg-3 col-md-4 col-sm-6" data-game-card>
                 <div class="game-card">
                   <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
@@ -250,7 +253,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-lg-3 col-md-4 col-sm-6" data-game-card>
                 <div class="game-card">
                   <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
@@ -266,7 +269,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-lg-3 col-md-4 col-sm-6" data-game-card>
                 <div class="game-card">
                   <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
@@ -282,7 +285,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-lg-3 col-md-4 col-sm-6" data-game-card>
                 <div class="game-card">
                   <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
@@ -298,7 +301,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-lg-3 col-md-4 col-sm-6" data-game-card>
                 <div class="game-card">
                   <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
@@ -314,7 +317,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-lg-3 col-md-4 col-sm-6" data-game-card>
                 <div class="game-card">
                   <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
@@ -330,7 +333,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-lg-3 col-md-4 col-sm-6" data-game-card>
                 <div class="game-card">
                   <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
@@ -346,7 +349,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-lg-3 col-md-4 col-sm-6" data-game-card>
                 <div class="game-card">
                   <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
@@ -362,7 +365,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-lg-3 col-md-4 col-sm-6" data-game-card>
                 <div class="game-card">
                   <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
@@ -378,7 +381,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-lg-3 col-md-4 col-sm-6" data-game-card>
                 <div class="game-card">
                   <a href="/?page=game_play" class="text-decoration-none">
                     <div class="game-image-container">
@@ -397,7 +400,7 @@
             </div>
 
             <!-- Pagination -->
-            <nav class="game_list mt-5" aria-label="Game_list">
+            <nav class="game_list mt-5" aria-label="Game_list" data-pagination>
               <ul class="pagination">
                 <li><a class="active" href="#">1</a></li>
                 <li><a href="#">2</a></li>
@@ -557,5 +560,67 @@
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/particles.js"></script>
+
+    <!-- GSAP Games Animation -->
+    <script>
+      // Register ScrollTrigger plugin
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Set initial states for game cards
+      gsap.set("[data-game-card]", { 
+        y: 80, 
+        opacity: 0, 
+        rotationY: 15
+      });
+
+      // Create staggered animation for game cards
+      ScrollTrigger.create({
+        trigger: "[data-games-grid]",
+        start: "top 85%",
+        onEnter: () => {
+          gsap.to("[data-game-card]", {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            rotationY: 0,
+            duration: 0.6,
+            ease: "power1.inOut",
+            stagger: {
+              amount: .5,
+              from: "start",
+              grid: "auto"
+            }
+          });
+        }
+      });
+
+      // Add hover effects for game cards
+      document.querySelectorAll("[data-game-card]").forEach(card => {
+        const gameCard = card.querySelector(".game-card");
+        
+        card.addEventListener("mouseenter", () => {
+          gsap.to(gameCard, {
+            y: -10,
+            scale: 1.05,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+        
+        card.addEventListener("mouseleave", () => {
+          gsap.to(gameCard, {
+            y: 0,
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+      });
+
+      // Refresh ScrollTrigger on window resize
+      window.addEventListener("resize", () => {
+        ScrollTrigger.refresh();
+      });
+    </script>
   </body>
 </html>
