@@ -59,17 +59,14 @@
             </li>
           </ul>
 
-                    <div class="d-flex">
+          <div class="d-flex">
             <!-- Login Button -->
-            <div class="login-btn">
-              <a class="btn btn-outline-light me-2" href="./login.html">
-                <i class="fas fa-right-to-bracket"></i> Login
-              </a>
-              <a class="btn btn-outline-light me-2" href="./signup.html">
-                <i class="fas fa-user-plus"></i> Signup
-              </a>
-            </div>
-            <!-- logout block -->
+            <a
+              class="btn btn-outline-light me-2 login-btn"
+              href="./login.html"
+            >
+              <i class="fas fa-user-plus"></i> Login
+            </a>
             <div class="logout-btn d-none">
               <span class="user-id" id="user_id"></span>
               <a class="btn btn-outline-light me-2" href="/?delcookie=1">
@@ -80,115 +77,45 @@
         </div>
       </div>
     </nav>
-    <div class="py-5 grey-section">
+    <div class="container py-5">
       <div class="row justify-content-center">
-        <div class="col-md-4">
-          <div class="card shadow login-form-container">
+        <div class="col-md-6">
+          <div class="card shadow">
             <div class="card-header text-center">
-              <ul
-                class="nav nav-tabs card-header-tabs"
-                id="authTabs"
-                role="tablist"
-              >
-                <li class="nav-item">
-                  <button
-                    class="nav-link active"
-                    id="login-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#login"
-                    type="button"
-                    role="tab"
-                    aria-controls="login"
-                    aria-selected="true"
-                  >
-                    <i class="fas fa-sign-in-alt me-2"></i>Login
-                  </button>
-                </li>
-                <li class="nav-item">
-                  <button
-                    class="nav-link"
-                    id="forgot-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#forgot"
-                    type="button"
-                    role="tab"
-                    aria-controls="forgot"
-                    aria-selected="false"
-                  >
-                    <i class="fas fa-key me-2"></i>Forgot Password?
-                  </button>
-                </li>
-              </ul>
+              <h4 class="mb-0">Sign In</h4>
             </div>
             <div class="card-body">
-              <div class="tab-content" id="authTabsContent">
-                <!-- Login Form -->
-                <div
-                  class="tab-pane fade show active"
-                  id="login"
-                  role="tabpanel"
-                  aria-labelledby="login-tab"
-                >
-                  <form>
-                    <div class="mb-3">
-                      <label for="loginEmail" class="form-label"
-                        >Email address</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="loginEmail"
-                        placeholder="Enter your email"
-                        required
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="loginPassword" class="form-label"
-                        >Password</label
-                      >
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="loginPassword"
-                        placeholder="Enter your password"
-                        required
-                      />
-                    </div>
-                    <div class="d-grid">
-                      <button type="submit" class="btn btn-primary">
-                        Login
-                      </button>
-                    </div>
-                  </form>
+              <form>
+                <div class="mb-3">
+                  <label for="loginEmail" class="form-label"
+                    >Email address</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    required
+                  />
                 </div>
-                <!-- Forgot Password Form -->
-                <div
-                  class="tab-pane fade"
-                  id="forgot"
-                  role="tabpanel"
-                  aria-labelledby="forgot-tab"
-                >
-                  <form>
-                    <div class="mb-3">
-                      <label for="forgotEmail" class="form-label"
-                        >Email address</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="forgotEmail"
-                        placeholder="Enter your email"
-                        required
-                      />
-                    </div>
-                    <div class="d-grid">
-                      <button type="submit" class="btn btn-warning">
-                        Reset Password
-                      </button>
-                    </div>
-                  </form>
+                <div class="mb-3">
+                  <label for="loginPassword" class="form-label"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    required
+                  />
                 </div>
-              </div>
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary">
+                    Login
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -304,7 +231,7 @@
       </div>
     </footer>
     <!-- Toast Notifications -->
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050; pointer-events: none;">
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
       <div
         id="errorToast"
         class="toast align-items-center text-bg-danger border-0"
@@ -330,7 +257,6 @@
         role="alert"
         aria-live="assertive"
         aria-atomic="true"
-        style="pointer-events: auto;"
       >
         <div class="d-flex">
           <div class="toast-body">
@@ -369,76 +295,9 @@
       // Example usage: showSuccessToast('Login successful!');
     </script>
     <script>
-      // Tab functionality for login and forgot password
-      const authTabs = document.getElementById("authTabs");
-      const tabButtons = authTabs.querySelectorAll('[data-bs-toggle="tab"]');
-
-      function toggleFooter(e) {
-        // Use event target if available, otherwise fallback to current active tab
-        let activeTabId;
-        if (e && e.target) {
-          activeTabId = e.target.id;
-        } else {
-          const activeTab = document.querySelector(".nav-link.active");
-          activeTabId = activeTab ? activeTab.id : "";
-        }
-        if (activeTabId === "signup-tab") {
-          signupFooter.style.display = "";
-        } else {
-          signupFooter.style.display = "none";
-        }
-      }
-
-      // Save active tab to localStorage
-      function saveActiveTab(tabId) {
-        localStorage.setItem('activeAuthTab', tabId);
-      }
-
-      // Get saved tab from localStorage
-      function getSavedTab() {
-        return localStorage.getItem('activeAuthTab');
-      }
-
-      // Load saved tab on page load
-      function loadSavedTab() {
-        const savedTab = getSavedTab();
-        if (savedTab && (savedTab === 'login-tab' || savedTab === 'forgot-tab')) {
-          const savedTabButton = document.getElementById(savedTab);
-          if (savedTabButton) {
-            // Remove active class from current tab
-            document.querySelectorAll('.nav-link').forEach(tab => {
-              tab.classList.remove('active');
-              tab.setAttribute('aria-selected', 'false');
-            });
-            document.querySelectorAll('.tab-pane').forEach(pane => {
-              pane.classList.remove('show', 'active');
-            });
-
-            // Activate saved tab
-            savedTabButton.classList.add('active');
-            savedTabButton.setAttribute('aria-selected', 'true');
-            
-            const targetPane = document.querySelector(savedTabButton.getAttribute('data-bs-target'));
-            if (targetPane) {
-              targetPane.classList.add('show', 'active');
-            }
-          }
-        }
-      }
-
-      tabButtons.forEach((btn) => {
-        btn.addEventListener("shown.bs.tab", (e) => {
-          saveActiveTab(e.target.id);
-        });
-      });
-
-      // Load saved tab on page load
-      document.addEventListener('DOMContentLoaded', loadSavedTab);
-    </script>
-    <script type="module">
       // Login form submission
       document
-        .querySelector("#login form")
+        .querySelector("form")
         .addEventListener("submit", async (e) => {
           e.preventDefault();
           const email = document.getElementById("loginEmail").value;
@@ -448,8 +307,6 @@
             const response = await login(email, password);
             if (response.success) {
               showSuccessToast("Login successful! Redirecting...");
-              // Clear saved tab on successful login
-              localStorage.removeItem('activeAuthTab');
               setTimeout(() => {
                 window.location.href = "index.html";
               }, 2000);
@@ -458,33 +315,6 @@
             }
           } catch (error) {
             console.error("Login error:", error);
-            showErrorToast("Network error. Please check your connection and try again.");
-          }
-        });
-
-      // Forgot password form submission
-      document
-        .querySelector("#forgot form")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const email = document.getElementById("forgotEmail").value;
-
-          if (!email) {
-            showErrorToast("Please enter your email address.");
-            return;
-          }
-
-          try {
-            const response = await forgotPassword(email);
-            if (response.success) {
-              showSuccessToast("Password reset instructions sent to your email!");
-              // Clear the form but keep the tab
-              document.getElementById("forgotEmail").value = "";
-            } else {
-              showErrorToast(response.message || "Failed to send reset instructions. Please try again.");
-            }
-          } catch (error) {
-            console.error("Forgot password error:", error);
             showErrorToast("Network error. Please check your connection and try again.");
           }
         });

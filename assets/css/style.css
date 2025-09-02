@@ -2072,9 +2072,18 @@ a[href*="cat=Word"] .genre-icon {
 .ssl-badge {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50px;
-  padding: 10px 20px;
+  padding: 8px 8px;
   display: inline-block;
-  margin-bottom: 20px;
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+.form-check {
+  font-size: 0.8rem;
+}
+
+.form-check-label a {
+  color: var(--secondary-color);
 }
 .form-floating {
   margin-bottom: 20px;
@@ -2479,4 +2488,382 @@ a[href*="cat=Word"] .genre-icon {
   .mt-xs-2 {
     margin-top: 1rem !important;
   }
+}
+
+/* Enhanced Form Styling for Signup */
+.signup-form-container {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(94, 96, 206, 0.1);
+  box-shadow: 0 20px 40px rgba(94, 96, 206, 0.08);
+}
+
+.signup-form-container .card-header {
+  background: linear-gradient(135deg, var(--secondary-color), var(--success-color));
+  color: white;
+  border-radius: 20px 20px 0 0;
+  padding: 1.5rem;
+  border: none;
+}
+
+.signup-form-container .card-header h4 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form-container .card-body {
+  padding: 2rem;
+}
+
+/* Modern Form Labels */
+.form-label {
+  font-weight: 600;
+  color: var(--accent-color);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.form-label::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--success-color));
+  border-radius: 1px;
+}
+
+/* Enhanced Form Controls */
+.form-control, .form-select {
+  border: 2px solid rgba(94, 96, 206, 0.15);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.25rem rgba(94, 96, 206, 0.15);
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-1px);
+}
+
+.form-control::placeholder {
+  color: var(--muted-color);
+  font-style: italic;
+}
+
+/* Custom Checkbox Styling */
+.form-check {
+  margin-bottom: 1rem;
+  padding: .8rem 2rem;
+  background: rgba(94, 96, 206, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(94, 96, 206, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.form-check:hover {
+  background: rgba(94, 96, 206, 0.06);
+  border-color: rgba(94, 96, 206, 0.2);
+}
+
+.form-check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0;
+  margin-left: 0;
+  border: 2px solid var(--secondary-color);
+  border-radius: 6px;
+  background: white;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.form-check-input:checked {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(94, 96, 206, 0.25);
+}
+
+.form-check-label {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--accent-color);
+  margin-left: 0;
+  flex: 1;
+}
+
+.form-check-label a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.form-check-label a:hover {
+  color: var(--success-color);
+  text-decoration: underline;
+}
+
+/* Captcha Container Styling */
+.captcha-container {
+  background: rgba(94, 96, 206, 0.03);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgba(94, 96, 206, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+}
+
+/* Submit Button Enhancement */
+.signup-submit-btn {
+  background: linear-gradient(135deg, var(--success-color), var(--secondary-color));
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.signup-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+}
+
+.signup-submit-btn:hover::before {
+  left: 100%;
+}
+
+/* Form Row Spacing */
+.signup-form-container .row {
+  margin-bottom: 0.5rem;
+}
+
+.signup-form-container .mb-3 {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Responsive Form Adjustments */
+@media (max-width: 768px) {
+  .signup-form-container .card-body {
+    padding: 1.5rem;
+  }
+  
+  .form-label {
+    font-size: 0.9rem;
+  }
+  
+  .form-control, .form-select {
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Login Form Styling */
+.login-form-container {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(94, 96, 206, 0.1);
+  box-shadow: 0 20px 40px rgba(94, 96, 206, 0.08);
+}
+
+.login-form-container .card-header {
+  background: linear-gradient(135deg, var(--secondary-color), var(--success-color));
+  color: white;
+  border-radius: 20px 20px 0 0;
+  padding: 1.5rem;
+  border: none;
+}
+
+.login-form-container .card-header .nav-tabs {
+  border: none;
+  background: none;
+}
+
+.login-form-container .card-header .nav-link {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.25rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.login-form-container .card-header .nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.login-form-container .card-header .nav-link.active {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  color: var(--secondary-color);
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.login-form-container .card-body {
+  padding: 2rem;
+}
+
+/* Login Form Controls Enhancement */
+.login-form-container .form-control {
+  border: 2px solid rgba(94, 96, 206, 0.15);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.login-form-container .form-control:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.25rem rgba(94, 96, 206, 0.15);
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-1px);
+}
+
+.login-form-container .form-control::placeholder {
+  color: var(--muted-color);
+  font-style: italic;
+}
+
+.login-form-container .form-label {
+  font-weight: 600;
+  color: var(--accent-color);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.login-form-container .form-label::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--success-color));
+  border-radius: 1px;
+}
+
+/* Remove underlines from nav-link buttons */
+.login-form-container .nav-link::after {
+  display: none;
+}
+
+/* Login Button Enhancements */
+.login-form-container .btn-primary {
+  background: linear-gradient(135deg, var(--secondary-color), #4a4fb5);
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-form-container .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.login-form-container .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(94, 96, 206, 0.3);
+}
+
+.login-form-container .btn-primary:hover::before {
+  left: 100%;
+}
+
+.login-form-container .btn-warning {
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-form-container .btn-warning::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.login-form-container .btn-warning:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
+}
+
+.login-form-container .btn-warning:hover::before {
+  left: 100%;
 }
