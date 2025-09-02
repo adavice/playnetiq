@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (logoutBtn) logoutBtn.classList.remove('d-none');
   } else {
     // show login, hide cancel subscription
-    if (loginBtn) login-btn.classList.remove('d-none');
+    if (loginBtn) loginBtn.classList.remove('d-none');
     if (logoutBtn) logoutBtn.classList.add('d-none');
   }
 });

@@ -627,7 +627,6 @@ html {
   padding: 2rem;
   text-align: center;
   border: 1px solid rgba(94, 96, 206, 0.1);
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
@@ -1209,7 +1208,6 @@ html {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
   height: 100%;
 }
 
@@ -1354,7 +1352,6 @@ html {
   border-radius: 15px;
   padding: 2rem 1.5rem;
   text-align: center;
-  transition: all 0.3s ease;
   height: 100%;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   border: 2px solid transparent;
@@ -2272,7 +2269,6 @@ a[href*="cat=Word"] .genre-icon {
 
 .game-card {
   height: 100%;
-  transition: all 0.3s ease;
 }
 
 .game-card:hover {
