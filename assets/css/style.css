@@ -2178,6 +2178,13 @@ a[href*="cat=Word"] .genre-icon {
   vertical-align: middle;
 }
 
+
+#login .row {
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+}
+
 /* Desktop Category Buttons */
 @media (min-width: 769px) {
   .category-cloud {
