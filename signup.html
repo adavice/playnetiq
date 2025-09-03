@@ -15,9 +15,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
+    <script src="./assets/js/jquery.min.js"></script>
   </head>
-  <body>
+  <body class="signUp cc_flow">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <a class="navbar-brand" href="index.html">
@@ -60,7 +65,7 @@
             </li>
           </ul>
 
-                    <div class="d-flex">
+          <div class="d-flex">
             <!-- Login Button -->
             <div class="login-btn">
               <a class="btn btn-outline-light me-2" href="./login.html">
@@ -92,8 +97,8 @@
               </h4>
             </div>
             <div class="card-body">
-              <form method="post">
-                <input type="hidden" name="page" id="page" value="signup">
+              <form method="post" id="form">
+                <input type="hidden" name="page" id="page" value="signup" />
                 <div class="row mb-3">
                   <div class="col-md-6">
                     <label for="name" class="form-label">First Name</label>
@@ -157,9 +162,7 @@
                 </div>
                 <div class="row mb-3">
                   <div class="col-md-6">
-                    <label for="phone" class="form-label"
-                      >Phone Number</label
-                    >
+                    <label for="phone" class="form-label">Phone Number</label>
                     <input
                       type="text"
                       class="form-control"
@@ -209,9 +212,7 @@
                       <option value="27">Bermuda</option>
                       <option value="28">Brunei Darussalam</option>
                       <option value="29">Bolivia</option>
-                      <option value="30">
-                        Bonaire; Sint Eustatius; Saba
-                      </option>
+                      <option value="30">Bonaire; Sint Eustatius; Saba</option>
                       <option value="31">Brazil</option>
                       <option value="32">Bahamas</option>
                       <option value="33">Bhutan</option>
@@ -249,9 +250,7 @@
                       <option value="65">Ethiopia</option>
                       <option value="66">Finland</option>
                       <option value="67">Fiji</option>
-                      <option value="68">
-                        Falkland Islands (MALVINAS)
-                      </option>
+                      <option value="68">Falkland Islands (MALVINAS)</option>
                       <option value="69">Micronesia</option>
                       <option value="70">Faroe Islands</option>
                       <option value="71">France</option>
@@ -414,9 +413,7 @@
                       <option value="222">United States</option>
                       <option value="223">Uruguay</option>
                       <option value="224">Uzbekistan</option>
-                      <option value="225">
-                        Holy See (VATICAN City State)
-                      </option>
+                      <option value="225">Holy See (VATICAN City State)</option>
                       <option value="226">
                         Saint Vincent and The Grenadines
                       </option>
@@ -437,9 +434,7 @@
                 </div>
                 <div class="row mb-3">
                   <div class="col-md-12">
-                    <label for="signupEmail" class="form-label"
-                      >Email</label
-                    >
+                    <label for="signupEmail" class="form-label">Email</label>
                     <input
                       type="email"
                       class="form-control"
@@ -472,11 +467,10 @@
                     />
                     <label class="form-check-label" for="checkBox2">
                       I understand this is a
-                      <a href="./subscription.html">subscription service</a
-                      >, that continues automatically after 3 trial days (if
-                      it is not terminated before). There will be a 1 EUR
-                      charge for authorization purposes. This charge will be
-                      reverted back.
+                      <a href="./subscription.html">subscription service</a>,
+                      that continues automatically after 3 trial days (if it is
+                      not terminated before). There will be a 1 EUR charge for
+                      authorization purposes. This charge will be reverted back.
                     </label>
                   </div>
                   <div class="form-check mb-2">
@@ -487,8 +481,8 @@
                       required
                     />
                     <label class="form-check-label" for="checkBox3">
-                      I agree to a recurring monthly transaction of 38.95
-                      EUR following a 3-day trial.
+                      I agree to a recurring monthly transaction of 38.95 EUR
+                      following a 3-day trial.
                     </label>
                   </div>
                 </div>
@@ -500,8 +494,19 @@
                     theme="dark"
                   ></div>
                 </div>
+                <div
+                  class="row"
+                  style="text-align: center; color: red; display: block"
+                  id="errorPlaceHolder"
+                  style="color: red; padding-bottom: 5px"
+                >
+                 
+                </div>
                 <div class="d-grid">
-                  <button type="submit" class="btn btn-success signup-submit-btn">
+                  <button
+                    type="submit"
+                    class="btn btn-success signup-submit-btn"
+                  >
                     <i class="fas fa-arrow-right me-2"></i>
                     Continue
                   </button>
@@ -621,7 +626,34 @@
         </div>
       </div>
     </footer>
-
+    <script>
+      $("#form").on("submit", function () {
+        var formData = {
+          name: $("#name").val(),
+          lname: $("#lname").val(),
+          address: $("#address").val(),
+          code: $("#code").val(),
+          city: $("#city").val(),
+          phone: $("#phone").val(),
+        };
+        $("#form").prop("disabled", true);
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "send_form_talk_to_us" });
+        $.ajax({
+          type: "POST",
+          url: "/c/contact_form",
+          data: formData,
+          encode: true,
+          success: function (data) {
+            window.location.replace("./signup2.html");
+          },
+          error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert("Something is wrong.");
+          },
+        });
+        return false;
+      });
+    </script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/particles.js"></script>
