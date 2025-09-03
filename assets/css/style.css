@@ -1,5 +1,10 @@
 /* Custom CSS Styles */
 
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Root Variables - Clean Trendy Palette */
 :root {
   /* Main 5-Color Trendy Palette */
@@ -809,7 +814,6 @@ html {
 
   .navbar .btn {
     flex: 1;
-    max-width: 120px;
   }
 }
 
