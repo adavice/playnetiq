@@ -92,7 +92,8 @@
               </h4>
             </div>
             <div class="card-body">
-              <form>
+              <form method="post">
+                <input type="hidden" name="page" id="page" value="signup">
                 <div class="row mb-3">
                   <div class="col-md-6">
                     <label for="name" class="form-label">First Name</label>
@@ -620,175 +621,9 @@
         </div>
       </div>
     </footer>
-    <!-- Toast Notifications -->
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050; pointer-events: none;">
-      <div
-        id="errorToast"
-        class="toast align-items-center text-bg-danger border-0"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-      >
-        <div class="d-flex">
-          <div class="toast-body">
-            <!-- Error message will be dynamically inserted here -->
-          </div>
-          <button
-            type="button"
-            class="btn-close btn-close-white me-2 m-auto"
-            data-bs-dismiss="toast"
-            aria-label="Close"
-          ></button>
-        </div>
-      </div>
-      <div
-        id="successToast"
-        class="toast align-items-center text-bg-success border-0"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-        style="pointer-events: auto;"
-      >
-        <div class="d-flex">
-          <div class="toast-body">
-            <!-- Success message will be dynamically inserted here -->
-          </div>
-          <button
-            type="button"
-            class="btn-close btn-close-white me-2 m-auto"
-            data-bs-dismiss="toast"
-            aria-label="Close"
-          ></button>
-        </div>
-      </div>
-    </div>
 
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/particles.js"></script>
-    <script>
-      function showErrorToast(message) {
-        const toastElement = document.getElementById("errorToast");
-        const toastBody = toastElement.querySelector(".toast-body");
-        toastBody.textContent = message;
-        const toast = new bootstrap.Toast(toastElement);
-        toast.show();
-      }
-
-      function showSuccessToast(message) {
-        const toastElement = document.getElementById("successToast");
-        const toastBody = toastElement.querySelector(".toast-body");
-        toastBody.textContent = message;
-        const toast = new bootstrap.Toast(toastElement);
-        toast.show();
-      }
-    </script>
-    <script type="module">
-      // Signup function
-      async function signup(formData) {
-        try {
-          const apiFormData = new FormData();
-          apiFormData.append('page', 'signup');
-          apiFormData.append('name', formData.name);
-          apiFormData.append('lname', formData.lname);
-          apiFormData.append('address', formData.address);
-          apiFormData.append('post_code', formData.post_code);
-          apiFormData.append('city', formData.city);
-          apiFormData.append('phone', formData.phone);
-          apiFormData.append('country', formData.country);
-          apiFormData.append('Email', formData.email); // Note: Capital 'E' to match your example
-          
-          // Get Cloudflare Turnstile response
-          const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]');
-          if (turnstileResponse && turnstileResponse.value) {
-            apiFormData.append('cf-turnstile-response', turnstileResponse.value);
-          }
-
-          const response = await fetch('?login', {
-            method: 'POST',
-            body: apiFormData
-          });
-
-          if (response.ok) {
-            const result = await response.text();
-            // Check if response indicates success (adjust based on your server response)
-            return {
-              success: true,
-              message: "Registration successful"
-            };
-          } else {
-            return {
-              success: false,
-              message: "Registration failed"
-            };
-          }
-        } catch (error) {
-          console.error('Signup error:', error);
-          return {
-            success: false,
-            message: "Network error occurred"
-          };
-        }
-      }
-
-      // Signup form submission
-      document
-        .querySelector("form")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
-          
-          // Get form data
-          const formData = {
-            name: document.getElementById("name").value,
-            lname: document.getElementById("lname").value,
-            address: document.getElementById("address").value,
-            post_code: document.getElementById("code").value,
-            city: document.getElementById("city").value,
-            phone: document.getElementById("phone").value,
-            country: document.getElementById("country").value,
-            email: document.getElementById("signupEmail").value
-          };
-
-          // Validate required fields
-          const requiredFields = ['name', 'lname', 'address', 'post_code', 'city', 'phone', 'country', 'email'];
-          for (const field of requiredFields) {
-            if (!formData[field]) {
-              showErrorToast(`Please fill in all required fields.`);
-              return;
-            }
-          }
-
-          // Validate checkboxes
-          const checkboxes = ['checkBox1', 'checkBox2', 'checkBox3'];
-          for (const checkboxId of checkboxes) {
-            if (!document.getElementById(checkboxId).checked) {
-              showErrorToast("Please accept all terms and conditions to continue.");
-              return;
-            }
-          }
-
-          // Check if captcha is completed
-          const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]');
-          if (!turnstileResponse || !turnstileResponse.value) {
-            showErrorToast("Please complete the captcha verification.");
-            return;
-          }
-
-          try {
-            const response = await signup(formData);
-            if (response.success) {
-              showSuccessToast("Registration successful! Redirecting to payment...");
-              setTimeout(() => {
-                window.location.href = "payment.html";
-              }, 2000);
-            } else {
-              showErrorToast(response.message || "Registration failed. Please try again.");
-            }
-          } catch (error) {
-            console.error("Signup error:", error);
-            showErrorToast("Network error. Please check your connection and try again.");
-          }
-        });
-    </script>
   </body>
 </html>

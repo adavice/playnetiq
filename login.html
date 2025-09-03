@@ -129,7 +129,8 @@
                   role="tabpanel"
                   aria-labelledby="login-tab"
                 >
-                  <form>
+                  <form method="post">
+                    <input type="hidden" name="page" value="login">
                     <div class="mb-3">
                       <label for="loginEmail" class="form-label"
                         >Email address</label
@@ -168,7 +169,8 @@
                   role="tabpanel"
                   aria-labelledby="forgot-tab"
                 >
-                  <form>
+                  <form method="post">
+                    <input type="hidden" name="page" value="login">
                     <div class="mb-3">
                       <label for="forgotEmail" class="form-label"
                         >Email address</label
@@ -303,71 +305,9 @@
         </div>
       </div>
     </footer>
-    <!-- Toast Notifications -->
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050; pointer-events: none;">
-      <div
-        id="errorToast"
-        class="toast align-items-center text-bg-danger border-0"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-      >
-        <div class="d-flex">
-          <div class="toast-body">
-            <!-- Error message will be dynamically inserted here -->
-          </div>
-          <button
-            type="button"
-            class="btn-close btn-close-white me-2 m-auto"
-            data-bs-dismiss="toast"
-            aria-label="Close"
-          ></button>
-        </div>
-      </div>
-      <div
-        id="successToast"
-        class="toast align-items-center text-bg-success border-0"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-        style="pointer-events: auto;"
-      >
-        <div class="d-flex">
-          <div class="toast-body">
-            <!-- Success message will be dynamically inserted here -->
-          </div>
-          <button
-            type="button"
-            class="btn-close btn-close-white me-2 m-auto"
-            data-bs-dismiss="toast"
-            aria-label="Close"
-          ></button>
-        </div>
-      </div>
-    </div>
-
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/particles.js"></script>
-    <script>
-      function showErrorToast(message) {
-        const toastElement = document.getElementById("errorToast");
-        const toastBody = toastElement.querySelector(".toast-body");
-        toastBody.textContent = message;
-        const toast = new bootstrap.Toast(toastElement);
-        toast.show();
-      }
-
-      function showSuccessToast(message) {
-        const toastElement = document.getElementById("successToast");
-        const toastBody = toastElement.querySelector(".toast-body");
-        toastBody.textContent = message;
-        const toast = new bootstrap.Toast(toastElement);
-        toast.show();
-      }
-
-      // Example usage: showSuccessToast('Login successful!');
-    </script>
     <script>
       // Tab functionality for login and forgot password
       const authTabs = document.getElementById("authTabs");
@@ -434,130 +374,6 @@
 
       // Load saved tab on page load
       document.addEventListener('DOMContentLoaded', loadSavedTab);
-    </script>
-    <script type="module">
-      // Authentication functions
-      async function login(email, password) {
-        // Make actual API call to login endpoint
-        try {
-          const formData = new FormData();
-          formData.append('page', 'login');
-          formData.append('email', email);
-          formData.append('password', password);
-
-          const response = await fetch('?login', {
-            method: 'POST',
-            body: formData
-          });
-
-          if (response.ok) {
-            const result = await response.text();
-            return {
-              success: true,
-              message: "Login successful",
-              user: { email: email }
-            };
-          } else {
-            return {
-              success: false,
-              message: "Invalid email or password"
-            };
-          }
-        } catch (error) {
-          console.error('Login error:', error);
-          return {
-            success: false,
-            message: "Network error occurred"
-          };
-        }
-      }
-
-      async function forgotPassword(email) {
-        try {
-          const formData = new FormData();
-          formData.append('page', 'login');
-          formData.append('email', email);
-          formData.append('recover', 'Recover Password');
-
-          const response = await fetch('?login', {
-            method: 'POST',
-            body: formData
-          });
-
-          if (response.ok) {
-            const result = await response.text();
-            // Check if response indicates success (adjust based on your server response)
-            return {
-              success: true,
-              message: "Password reset instructions sent"
-            };
-          } else {
-            return {
-              success: false,
-              message: "Failed to send reset instructions"
-            };
-          }
-        } catch (error) {
-          console.error('Password reset error:', error);
-          return {
-            success: false,
-            message: "Network error occurred"
-          };
-        }
-      }
-
-      // Login form submission
-      document
-        .querySelector("#login form")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const email = document.getElementById("loginEmail").value;
-          const password = document.getElementById("loginPassword").value;
-
-          try {
-            const response = await login(email, password);
-            if (response.success) {
-              showSuccessToast("Login successful! Redirecting...");
-              // Clear saved tab on successful login
-              localStorage.removeItem('activeAuthTab');
-              setTimeout(() => {
-                window.location.href = "index.html";
-              }, 2000);
-            } else {
-              showErrorToast(response.message || "Invalid email or password. Please try again.");
-            }
-          } catch (error) {
-            console.error("Login error:", error);
-            showErrorToast("Network error. Please check your connection and try again.");
-          }
-        });
-
-      // Forgot password form submission
-      document
-        .querySelector("#forgot form")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const email = document.getElementById("forgotEmail").value;
-
-          if (!email) {
-            showErrorToast("Please enter your email address.");
-            return;
-          }
-
-          try {
-            const response = await forgotPassword(email);
-            if (response.success) {
-              showSuccessToast("Password reset instructions sent to your email!");
-              // Clear the form but keep the tab
-              document.getElementById("forgotEmail").value = "";
-            } else {
-              showErrorToast(response.message || "Failed to send reset instructions. Please try again.");
-            }
-          } catch (error) {
-            console.error("Forgot password error:", error);
-            showErrorToast("Network error. Please check your connection and try again.");
-          }
-        });
     </script>
   </body>
 </html>
