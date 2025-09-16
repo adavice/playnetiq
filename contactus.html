@@ -15,6 +15,90 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- Add styles for the popup -->
+    <style>
+      .center-popup-overlay {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      .center-popup-box {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.1);
+        padding: 0;
+        text-align: center;
+        min-width: 380px;
+        max-width: 90vw;
+        border: 1px solid #dee2e6;
+        overflow: hidden;
+      }
+      .popup-header {
+        background: linear-gradient(135deg, #198754 0%, #20c997 100%);
+        color: white;
+        padding: 24px 28px;
+        border-bottom: 3px solid #157347;
+        position: relative;
+      }
+      .popup-header::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+      }
+      .center-popup-box .popup-icon {
+        font-size: 3.2rem;
+        margin-bottom: 12px;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        display: block;
+      }
+      .popup-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 0;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+      }
+      .popup-body {
+        padding: 32px 28px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      }
+      .center-popup-box .popup-message {
+        font-size: 1.1rem;
+        color: #495057;
+        margin: 0;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+      @media (max-width: 480px) {
+        .center-popup-box {
+          min-width: 280px;
+          margin: 20px;
+        }
+        .popup-header {
+          padding: 20px 24px;
+        }
+        .popup-body {
+          padding: 24px 20px;
+        }
+        .center-popup-box .popup-icon {
+          font-size: 2.5rem;
+        }
+        .popup-title {
+          font-size: 1.2rem;
+        }
+        .center-popup-box .popup-message {
+          font-size: 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -48,7 +132,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="./contact.html">
+              <a class="nav-link active" href="./contactus.html">
                 <i class="fas fa-envelope me-1"></i>Contact Us
               </a>
             </li>
@@ -279,7 +363,7 @@ hcBlNVB8v+GXlI9km1JwH7dwfeZN2ocNSImANCD9QhroGohmDhhhhhhhhhhhhhhhhhhhhhhhhhj/
             <h5 class="footer-section-title mb-3">Info</h5>
             <ul class="footer-links list-unstyled">
               <li>
-                <a href="./contact.html" class="footer-link">Contact Support</a>
+                <a href="./contactus.html" class="footer-link">Contact Support</a>
               </li>
               <li>
                 <a href="./cancel.html" class="footer-link"
@@ -358,7 +442,37 @@ hcBlNVB8v+GXlI9km1JwH7dwfeZN2ocNSImANCD9QhroGohmDhhhhhhhhhhhhhhhhhhhhhhhhhj/
         </div>
       </div>
     </footer>
+
+    <!-- Centered popup (visible, no script needed) -->
+    <div class="center-popup-overlay d-none" id="centerPopupOverlay">
+      <div class="center-popup-box" id="centerPopupBox">
+        <div class="popup-header">
+          <div class="popup-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h4 class="popup-title">Message Sent Successfully!</h4>
+        </div>
+        <div class="popup-body">
+          <div class="popup-message">
+            Thank you for contacting us! We'll get back to you within 24 hours.
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- Add script to hide popup when clicking outside -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var overlay = document.getElementById('centerPopupOverlay');
+        var box = document.getElementById('centerPopupBox');
+        overlay.addEventListener('click', function (e) {
+          if (e.target === overlay) {
+            overlay.classList.add('d-none');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
