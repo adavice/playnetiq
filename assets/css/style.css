@@ -2178,6 +2178,10 @@ a[href*="cat=Word"] .genre-icon {
   margin-bottom: 20px;
   display: none;
 }
+
+.error-holder {
+  
+}
 #usernameHolder {
   max-width: 200px;
   white-space: nowrap;
@@ -2523,7 +2527,7 @@ a[href*="cat=Word"] .genre-icon {
 }
 
 /* Modern Form Labels */
-.form-label {
+.form-label, .signup-form-container .wpwl-label {
   font-weight: 600;
   color: var(--accent-color);
   font-size: 0.85rem;
@@ -2870,4 +2874,74 @@ a[href*="cat=Word"] .genre-icon {
 
 .login-form-container .btn-warning:hover::before {
   left: 100%;
+}
+
+/* Truevo styles */
+.signup-form-container .wpwl-control,
+.signup-form-container .wpwl-control-iframe {
+  border: 2px solid rgba(94, 96, 206, 0.15) !important;
+  border-radius: 12px !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 1rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  width: 100% !important;
+  height: 50px !important;
+  box-sizing: border-box !important;
+}
+
+.signup-form-container .wpwl-control:focus,
+.signup-form-container .wpwl-control-iframe:focus {
+  border-color: var(--secondary-color) !important;
+  box-shadow: 0 0 0 0.25rem rgba(94, 96, 206, 0.15) !important;
+  background: rgba(255, 255, 255, 1) !important;
+  transform: translateY(-1px) !important;
+  outline: none !important;
+}
+
+.signup-form-container .wpwl-wrapper>.wpwl-icon {
+    position: absolute;
+    display: flex
+;
+    right: .5625em;
+    top: .5625em;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    /* background-position: initial; */
+    justify-content: center;
+    align-items: center;
+    background: #7678ef63;
+}
+
+.signup-form-container .ui-icon-help {
+    filter: brightness(4);
+}
+
+.signup-form-container .wpwl-button.wpwl-button-pay {
+    background: linear-gradient(135deg, var(--success-color), var(--secondary-color)) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.75rem 2rem !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.signup-form-container .wpwl-group.wpwl-group-expiry.wpwl-clearfix {
+  display: flex !important;
+}
+
+.signup-form-container .wpwl-control.wpwl-control-givenName {
+  margin-bottom: 10px!important;
+}
+
+.signup-form-container .wpwl-control.wpwl-control-brand option {
+  font-size: 0.9rem !important;
 }
