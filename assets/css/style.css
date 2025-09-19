@@ -2945,3 +2945,16 @@ a[href*="cat=Word"] .genre-icon {
 .signup-form-container .wpwl-control.wpwl-control-brand option {
   font-size: 0.9rem !important;
 }
+
+.s
+
+@media (max-width: 460px) {
+  .signup-form-container .wpwl-group.wpwl-group-brand.wpwl-clearfix {
+    display: flex !important;
+  }
+
+  .signup-form-container .wpwl-group.wpwl-group-expiry.wpwl-clearfix {
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+}
