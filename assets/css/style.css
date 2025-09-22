@@ -2946,7 +2946,17 @@ a[href*="cat=Word"] .genre-icon {
   font-size: 0.9rem !important;
 }
 
-.s
+.signup-form-container .wpwl-wrapper.wpwl-wrapper-brand {
+    padding: 0 !important;
+    width: 0;
+    opacity: 0;
+    pointer-events: none !important;
+}
+
+.signup-form-container .wpwl-brand-card,
+.signup-form-container .wpwl-wrapper-brand {
+    width: 54px!important;
+}
 
 @media (max-width: 460px) {
   .signup-form-container .wpwl-group.wpwl-group-brand.wpwl-clearfix {
@@ -2957,4 +2967,6 @@ a[href*="cat=Word"] .genre-icon {
     display: flex !important;
     justify-content: space-between !important;
   }
+
+  
 }
