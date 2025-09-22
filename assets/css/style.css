@@ -2180,7 +2180,10 @@ a[href*="cat=Word"] .genre-icon {
 }
 
 .error-holder {
-  
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 500;
 }
 #usernameHolder {
   max-width: 200px;
@@ -2956,6 +2959,12 @@ a[href*="cat=Word"] .genre-icon {
 .signup-form-container .wpwl-brand-card,
 .signup-form-container .wpwl-wrapper-brand {
     width: 54px!important;
+}
+
+.contact-agileinfo .contact-right-ltpwr {
+    margin: auto;
+    width: 50%;
+    padding: 60px 0;
 }
 
 @media (max-width: 460px) {
