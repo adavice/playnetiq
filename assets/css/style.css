@@ -2059,7 +2059,6 @@ a[href*="cat=Word"] .genre-icon {
   border-radius: 20px;
   box-shadow: 0 20px 40px var(--card-shadow);
   overflow: hidden;
-  margin-top: -40px;
   position: relative;
   z-index: 2;
 }
@@ -2502,7 +2501,8 @@ a[href*="cat=Word"] .genre-icon {
 }
 
 /* Enhanced Form Styling for Signup */
-.signup-form-container {
+.form-container {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
   backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 1px solid rgba(94, 96, 206, 0.1);
@@ -2512,7 +2512,7 @@ a[href*="cat=Word"] .genre-icon {
 .signup-form-container .card-header {
   background: linear-gradient(135deg, var(--secondary-color), var(--success-color));
   color: white;
-  border-radius: 20px 20px 0 0;
+  border-radius: 15px 15px 0 0;
   padding: 1.5rem;
   border: none;
 }
