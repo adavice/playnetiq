@@ -2504,7 +2504,6 @@ a[href*="cat=Word"] .genre-icon {
 .form-container {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
   backdrop-filter: blur(10px);
-  border-radius: 20px;
   border: 1px solid rgba(94, 96, 206, 0.1);
   box-shadow: 0 20px 40px rgba(94, 96, 206, 0.08);
 }
