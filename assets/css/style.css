@@ -120,6 +120,12 @@ html {
   }
 }
 
+.loading_gif {
+  width: 50px;
+  height: 50px;
+  margin: 30px 0;
+}
+
 /* Floating Particles */
 .hero-particles {
   position: absolute;
