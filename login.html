@@ -17,7 +17,7 @@
     />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <header class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <i class="fas fa-gamepad me-2"></i>Playnetiq
@@ -59,7 +59,7 @@
             </li>
           </ul>
 
-                    <div class="d-flex">
+          <div class="d-flex">
             <!-- Login Button -->
             <div class="login-btn">
               <a class="btn btn-outline-light me-2" href="./login.html">
@@ -79,116 +79,118 @@
           </div>
         </div>
       </div>
-    </nav>
-    <div class="py-5 grey-section">
-      <div class="row justify-content-center">
-        <div class="col-md-4">
-          <div class="card shadow login-form-container">
-            <div class="card-header text-center">
-              <ul
-                class="nav nav-tabs card-header-tabs gap-2"
-                id="authTabs"
-                role="tablist"
-              >
-                <li class="nav-item">
-                  <button
-                    class="nav-link active"
-                    id="login-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#login"
-                    type="button"
-                    role="tab"
-                    aria-controls="login"
-                    aria-selected="true"
-                  >
-                    <i class="fas fa-sign-in-alt me-2"></i>Login
-                  </button>
-                </li>
-                <li class="nav-item">
-                  <button
-                    class="nav-link"
-                    id="forgot-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#forgot"
-                    type="button"
-                    role="tab"
-                    aria-controls="forgot"
-                    aria-selected="false"
-                  >
-                    <i class="fas fa-key me-2"></i>Forgot Password?
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <div class="tab-content" id="authTabsContent">
-                <!-- Login Form -->
-                <div
-                  class="tab-pane fade show active"
-                  id="login"
-                  role="tabpanel"
-                  aria-labelledby="login-tab"
+    </header>
+    <div id="content">
+      <div class="py-5 grey-section">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="card shadow login-form-container">
+              <div class="card-header text-center">
+                <ul
+                  class="nav nav-tabs card-header-tabs gap-2"
+                  id="authTabs"
+                  role="tablist"
                 >
-                  <form method="post">
-                    <input type="hidden" name="page" value="login">
-                    <div class="mb-3">
-                      <label for="loginEmail" class="form-label"
-                        >Email address</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="loginEmail"
-                        placeholder="Enter your email"
-                        required
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="loginPassword" class="form-label"
-                        >Password</label
-                      >
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="loginPassword"
-                        placeholder="Enter your password"
-                        required
-                      />
-                    </div>
-                    <div class="d-grid">
-                      <button type="submit" class="btn btn-primary">
-                        Login
-                      </button>
-                    </div>
-                  </form>
-                </div>
-                <!-- Forgot Password Form -->
-                <div
-                  class="tab-pane fade"
-                  id="forgot"
-                  role="tabpanel"
-                  aria-labelledby="forgot-tab"
-                >
-                  <form method="post">
-                    <input type="hidden" name="page" value="login">
-                    <div class="mb-3">
-                      <label for="forgotEmail" class="form-label"
-                        >Email address</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="forgotEmail"
-                        placeholder="Enter your email"
-                        required
-                      />
-                    </div>
-                    <div class="d-grid">
-                      <button type="submit" class="btn btn-warning">
-                        Reset Password
-                      </button>
-                    </div>
-                  </form>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link active"
+                      id="login-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#login"
+                      type="button"
+                      role="tab"
+                      aria-controls="login"
+                      aria-selected="true"
+                    >
+                      <i class="fas fa-sign-in-alt me-2"></i>Login
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link"
+                      id="forgot-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#forgot"
+                      type="button"
+                      role="tab"
+                      aria-controls="forgot"
+                      aria-selected="false"
+                    >
+                      <i class="fas fa-key me-2"></i>Forgot Password?
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="authTabsContent">
+                  <!-- Login Form -->
+                  <div
+                    class="tab-pane fade show active"
+                    id="login"
+                    role="tabpanel"
+                    aria-labelledby="login-tab"
+                  >
+                    <form method="post">
+                      <input type="hidden" name="page" value="login" />
+                      <div class="mb-3">
+                        <label for="loginEmail" class="form-label"
+                          >Email address</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="loginEmail"
+                          placeholder="Enter your email"
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="loginPassword" class="form-label"
+                          >Password</label
+                        >
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="loginPassword"
+                          placeholder="Enter your password"
+                          required
+                        />
+                      </div>
+                      <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">
+                          Login
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- Forgot Password Form -->
+                  <div
+                    class="tab-pane fade"
+                    id="forgot"
+                    role="tabpanel"
+                    aria-labelledby="forgot-tab"
+                  >
+                    <form method="post">
+                      <input type="hidden" name="page" value="login" />
+                      <div class="mb-3">
+                        <label for="forgotEmail" class="form-label"
+                          >Email address</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="forgotEmail"
+                          placeholder="Enter your email"
+                          required
+                        />
+                      </div>
+                      <div class="d-grid">
+                        <button type="submit" class="btn btn-warning">
+                          Reset Password
+                        </button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -226,7 +228,9 @@
             <h5 class="footer-section-title mb-3">Info</h5>
             <ul class="footer-links list-unstyled">
               <li>
-                <a href="./contactus.html" class="footer-link">Contact Support</a>
+                <a href="./contactus.html" class="footer-link"
+                  >Contact Support</a
+                >
               </li>
               <li>
                 <a href="./cancel.html" class="footer-link"
@@ -331,36 +335,41 @@
 
       // Save active tab to localStorage
       function saveActiveTab(tabId) {
-        localStorage.setItem('activeAuthTab', tabId);
+        localStorage.setItem("activeAuthTab", tabId);
       }
 
       // Get saved tab from localStorage
       function getSavedTab() {
-        return localStorage.getItem('activeAuthTab');
+        return localStorage.getItem("activeAuthTab");
       }
 
       // Load saved tab on page load
       function loadSavedTab() {
         const savedTab = getSavedTab();
-        if (savedTab && (savedTab === 'login-tab' || savedTab === 'forgot-tab')) {
+        if (
+          savedTab &&
+          (savedTab === "login-tab" || savedTab === "forgot-tab")
+        ) {
           const savedTabButton = document.getElementById(savedTab);
           if (savedTabButton) {
             // Remove active class from current tab
-            document.querySelectorAll('.nav-link').forEach(tab => {
-              tab.classList.remove('active');
-              tab.setAttribute('aria-selected', 'false');
+            document.querySelectorAll(".nav-link").forEach((tab) => {
+              tab.classList.remove("active");
+              tab.setAttribute("aria-selected", "false");
             });
-            document.querySelectorAll('.tab-pane').forEach(pane => {
-              pane.classList.remove('show', 'active');
+            document.querySelectorAll(".tab-pane").forEach((pane) => {
+              pane.classList.remove("show", "active");
             });
 
             // Activate saved tab
-            savedTabButton.classList.add('active');
-            savedTabButton.setAttribute('aria-selected', 'true');
-            
-            const targetPane = document.querySelector(savedTabButton.getAttribute('data-bs-target'));
+            savedTabButton.classList.add("active");
+            savedTabButton.setAttribute("aria-selected", "true");
+
+            const targetPane = document.querySelector(
+              savedTabButton.getAttribute("data-bs-target")
+            );
             if (targetPane) {
-              targetPane.classList.add('show', 'active');
+              targetPane.classList.add("show", "active");
             }
           }
         }
@@ -373,7 +382,7 @@
       });
 
       // Load saved tab on page load
-      document.addEventListener('DOMContentLoaded', loadSavedTab);
+      document.addEventListener("DOMContentLoaded", loadSavedTab);
     </script>
   </body>
 </html>

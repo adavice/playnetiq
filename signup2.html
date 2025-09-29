@@ -17,7 +17,7 @@
     />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <header class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <i class="fas fa-gamepad me-2"></i>Playnetiq
@@ -79,190 +79,191 @@
           </div>
         </div>
       </div>
-    </nav>
-
-    <div class="payment-container grey-section py-5 signup-form-container">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xl-8 col-lg-10">
-            <div class="payment-card ">
-              <!-- Payment Header -->
-              <div class="payment-header">
-                <h2
-                  class="mb-3 d-flex align-items-center justify-content-center"
-                >
-                  Secure Payment
-                  <span class="ssl-badge"
-                    ><i class="fas fa-lock me-2"></i>SSL Secured</span
+    </header>
+    <div id="content">
+      <div class="payment-container grey-section py-5 signup-form-container">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-10">
+              <div class="payment-card">
+                <!-- Payment Header -->
+                <div class="payment-header">
+                  <h2
+                    class="mb-3 d-flex align-items-center justify-content-center"
                   >
-                </h2>
-                <p class="mb-0">
-                  Your payment information is encrypted and secure
-                </p>
-              </div>
+                    Secure Payment
+                    <span class="ssl-badge"
+                      ><i class="fas fa-lock me-2"></i>SSL Secured</span
+                    >
+                  </h2>
+                  <p class="mb-0">
+                    Your payment information is encrypted and secure
+                  </p>
+                </div>
 
-              <div class="row g-0">
-                <!-- Payment Form -->
-                <div class="col-lg-6">
-                  <div class="p-4 mt-4">
-                    <!-- Trial Highlight -->
-                    <div class="trial-highlight">
-                      <h4 class="mb-2">
-                        <i class="fas fa-gift me-2"></i>3-Day Free Trial
-                      </h4>
-                      <p class="mb-0">
-                        Authentication charge: <strong>€1.00</strong> (refunded
-                        immediately)
-                      </p>
+                <div class="row g-0">
+                  <!-- Payment Form -->
+                  <div class="col-lg-6">
+                    <div class="p-4 mt-4">
+                      <!-- Trial Highlight -->
+                      <div class="trial-highlight">
+                        <h4 class="mb-2">
+                          <i class="fas fa-gift me-2"></i>3-Day Free Trial
+                        </h4>
+                        <p class="mb-0">
+                          Authentication charge:
+                          <strong>€1.00</strong> (refunded immediately)
+                        </p>
+                      </div>
+
+                      <!-- Error Alert -->
+                      <div class="error-alert" id="cc_form_error">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <span></span>
+                      </div>
+
+                      <!-- Payment Form -->
+                      <form method="post" class="cardForm">
+                        <div class="form-floating">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="cardNumber"
+                            name="cardNumber"
+                            placeholder="Card Number"
+                            required
+                          />
+                          <label for="cardNumber"
+                            ><i class="fas fa-credit-card me-2"></i>Card
+                            Number</label
+                          >
+                        </div>
+
+                        <div class="form-floating">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="cardName"
+                            name="cardName"
+                            placeholder="Name on Card"
+                            required
+                          />
+                          <label for="cardName"
+                            ><i class="fas fa-user me-2"></i>Name on Card</label
+                          >
+                        </div>
+
+                        <div class="row g-3">
+                          <div class="col-md-4">
+                            <div class="form-floating">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="expMonth"
+                                maxlength="2"
+                                name="expMonth"
+                                placeholder="MM"
+                                required
+                              />
+                              <label for="expMonth">Month</label>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-floating">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="expYear"
+                                maxlength="2"
+                                name="expYear"
+                                placeholder="YY"
+                                required
+                              />
+                              <label for="expYear">Year</label>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-floating">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="cvv2"
+                                name="cvv2"
+                                placeholder="CVV"
+                                maxlength="4"
+                                required
+                              />
+                              <label for="cvv2">CVV</label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Payment Button -->
+                        <button type="submit" class="payment-btn mt-4">
+                          <i class="fas fa-lock me-2"></i>Complete Secure
+                          Payment
+                        </button>
+                      </form>
+
+                      <!-- Card Icons -->
+                      <div class="card-icons">
+                        <img src="./assets/images/visa_secure.webp" alt="" />
+                        <img src="./assets/images/vmlogo.png" alt="" />
+                        <img src="./assets/images/securecode.png" alt="" />
+                      </div>
                     </div>
+                  </div>
 
-                    <!-- Error Alert -->
-                    <div class="error-alert" id="cc_form_error">
-                      <i class="fas fa-exclamation-triangle me-2"></i>
-                      <span></span>
-                    </div>
+                  <!-- Sidebar Info -->
+                  <div class="col-lg-6">
+                    <div class="p-4 h-100 d-flex flex-column mt-4">
+                      <img
+                        src="./assets/images/games_small.jpg"
+                        alt="Games"
+                        class="img-fluid mb-4 rounded"
+                      />
 
-                    <!-- Payment Form -->
-                    <form method="post" class="cardForm">
-                      <div class="form-floating">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="cardNumber"
-                          name="cardNumber"
-                          placeholder="Card Number"
-                          required
-                        />
-                        <label for="cardNumber"
-                          ><i class="fas fa-credit-card me-2"></i>Card
-                          Number</label
+                      <div class="text-start">
+                        <h5
+                          class="fw-bold mb-3"
+                          style="color: var(--secondary-color)"
                         >
+                          Join Thousands of Players
+                        </h5>
+                        <p style="color: var(--muted-color)">
+                          Access hundreds of premium games instantly after your
+                          trial period. Experience seamless gaming with instant
+                          loading times, cross-platform compatibility, and a
+                          constantly expanding library of premium games.
+                        </p>
                       </div>
-
-                      <div class="form-floating">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="cardName"
-                          name="cardName"
-                          placeholder="Name on Card"
-                          required
-                        />
-                        <label for="cardName"
-                          ><i class="fas fa-user me-2"></i>Name on Card</label
-                        >
-                      </div>
-
-                      <div class="row g-3">
-                        <div class="col-md-4">
-                          <div class="form-floating">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="expMonth"
-                              maxlength="2"
-                              name="expMonth"
-                              placeholder="MM"
-                              required
-                            />
-                            <label for="expMonth">Month</label>
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-floating">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="expYear"
-                              maxlength="2"
-                              name="expYear"
-                              placeholder="YY"
-                              required
-                            />
-                            <label for="expYear">Year</label>
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-floating">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="cvv2"
-                              name="cvv2"
-                              placeholder="CVV"
-                              maxlength="4"
-                              required
-                            />
-                            <label for="cvv2">CVV</label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- Payment Button -->
-                      <button type="submit" class="payment-btn mt-4">
-                        <i class="fas fa-lock me-2"></i>Complete Secure Payment
-                      </button>
-                    </form>
-
-                    <!-- Card Icons -->
-                    <div class="card-icons">
-                      <img src="./assets/images/visa_secure.webp" alt="" />
-                      <img src="./assets/images/vmlogo.png" alt="" />
-                      <img src="./assets/images/securecode.png" alt="" />
                     </div>
                   </div>
                 </div>
 
-                <!-- Sidebar Info -->
-                <div class="col-lg-6">
-                  <div class="p-4 h-100 d-flex flex-column mt-4">
-                    <img
-                      src="./assets/images/games_small.jpg"
-                      alt="Games"
-                      class="img-fluid mb-4 rounded"
-                    />
-
-                    <div class="text-start">
-                      <h5
-                        class="fw-bold mb-3"
-                        style="color: var(--secondary-color)"
-                      >
-                        Join Thousands of Players
-                      </h5>
-                      <p style="color: var(--muted-color)">
-                        Access hundreds of premium games instantly after your
-                        trial period. Experience seamless gaming with instant
-                        loading times, cross-platform compatibility, and a
-                        constantly expanding library of premium games.
-                      </p>
-                    </div>
-                  </div>
+                <!-- Billing Information -->
+                <div class="billing-info">
+                  <h5>
+                    <i class="fas fa-info-circle me-2"></i>Billing Information
+                  </h5>
+                  <p>
+                    <strong>Billing Descriptor:</strong> The transaction will
+                    appear as "Playnetiq.com" on your credit card statement.
+                  </p>
+                  <p>
+                    <strong>Subscription Terms:</strong> By completing this
+                    purchase, you agree to a 3-day trial membership followed by
+                    a €28.95/month subscription. Unless cancelled within the
+                    trial period, your subscription will automatically continue
+                    at the full monthly rate.
+                  </p>
                 </div>
-              </div>
-
-              <!-- Billing Information -->
-              <div class="billing-info">
-                <h5>
-                  <i class="fas fa-info-circle me-2"></i>Billing Information
-                </h5>
-                <p>
-                  <strong>Billing Descriptor:</strong> The transaction will
-                  appear as "Playnetiq.com" on your credit card statement.
-                </p>
-                <p>
-                  <strong>Subscription Terms:</strong> By completing this
-                  purchase, you agree to a 3-day trial membership followed by a
-                  €28.95/month subscription. Unless cancelled within the trial
-                  period, your subscription will automatically continue at the
-                  full monthly rate.
-                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <footer class="playnetiq-footer text-white py-5">
       <div class="container">
         <div class="row">
@@ -293,7 +294,9 @@
             <h5 class="footer-section-title mb-3">Info</h5>
             <ul class="footer-links list-unstyled">
               <li>
-                <a href="./contactus.html" class="footer-link">Contact Support</a>
+                <a href="./contactus.html" class="footer-link"
+                  >Contact Support</a
+                >
               </li>
               <li>
                 <a href="./cancel.html" class="footer-link"
