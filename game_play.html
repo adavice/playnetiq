@@ -55,11 +55,56 @@
     #content {
         color: #fff;
         text-align: center;
+        position: relative;
+    }
+    
+    /* Game controls in top-right corner */
+    .game-controls {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+        display: flex;
+        gap: 10px;
+    }
+    
+    /* Styling for both buttons */
+    #fs, #backBtn {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 12px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #fs:hover, #backBtn:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        transform: scale(1.05);
+    }
+    
+    #fs.passive {
+        opacity: 0.7;
+    }
+    
+    /* Back button specific styling */
+    #backBtn {
+        font-size: 18px;
+        font-weight: bold;
     }
 </style>
 <div id="content">
-    text
 <section id="game" style="position: absolute; top: 0; bottom: 0; right: 0; left: 0;">
+    <div class="game-controls">
+        <a id="backBtn" onClick="history.go(-1); return false;" href="#">⇦</a>
+        <a id="fs" class="passive" data-toggle-fullscreen="" href="#">⛶</a>
+    </div>
     <iframe src="" id="gameiframe" width="100%" height="100%"
             frameborder="0" marginheight="0" marginwidth="0" scrolling="no" allow="fullscreen"
             style="border-style:none; overflow:hidden;"></iframe>
@@ -71,5 +116,16 @@
 </section>
 </div>
 </body>
+<script>$(document).ready(function () {
+    let container = document.getElementById("game"), button = document.getElementById("fs");
+    var fullscreen = !1;
 
+    function makeFullScreen(e) {
+        e.requestFullscreen ? e.requestFullscreen() : e.msRequestFullscreen ? e.msRequestFullscreen() : e.mozRequestFullScreen ? e.mozRequestFullScreen() : e.webkitRequestFullscreen ? e.webkitRequestFullscreen() : console.log("Fullscreen API is not supported")
+    }
+
+    $(button).on("click", function () {
+        1 == fullscreen ? (document.exitFullscreen(), button.innerText = "⛶", $(button).addClass("passive"), fullscreen = !1) : (makeFullScreen(container), button.innerText = "x", $(button).removeClass("passive"), fullscreen = !0)
+    });
+});</script>
 </html>
