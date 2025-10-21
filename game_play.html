@@ -61,6 +61,7 @@
 
     .navbar {
         z-index: 100;
+        box-shadow: none;
     }
     
     /* Game controls in top-right corner */
@@ -104,6 +105,11 @@
     #backBtn {
         font-size: 18px;
         font-weight: bold;
+    }
+
+    #game {
+        position: relative;
+        min-height: calc(100vh - 64px);
     }
 </style>
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -170,7 +176,7 @@
       </div>
     </nav>
 <div id="content">
-<section id="game" style="position: absolute; top: 0; bottom: 0; right: 0; left: 0;">
+<section id="game">
     <div class="game-controls">
         <a id="fs" class="passive" data-toggle-fullscreen="" href="#">⛶</a>
     </div>
